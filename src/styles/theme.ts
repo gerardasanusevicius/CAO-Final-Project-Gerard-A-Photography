@@ -7,17 +7,17 @@ const lightTheme = createTheme(theme, {
   palette: {
     primary: {
       main: '#a6a6a6',
-      light: '#f7f7f7',
-      dark: '#141414',
+      light: '#ededed',
+      dark: '#242424',
     },
     lightColor: {
-      main: '#f7f7f7',
+      main: '#ededed',
     },
     mediumColor: {
       main: '#a6a6a6',
     },
     darkColor: {
-      main: '#141414',
+      main: '#242424',
     },
     background: {
       default: '#f7f7f7',

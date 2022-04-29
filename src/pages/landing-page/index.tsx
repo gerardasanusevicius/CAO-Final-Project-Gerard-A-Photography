@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Button, Box } from '@mui/material';
+import { Typography, Button } from '@mui/material';
 import Background from './background';
 
 const LandingPage: React.FC = () => (
@@ -23,10 +23,17 @@ const LandingPage: React.FC = () => (
       variant="outlined"
       sx={(theme) => ({
         color: theme.palette.lightColor.main,
-        marginTop: '200px',
+        overflow: 'hidden',
+        marginTop: '225px',
         marginLeft: '1240px',
-        fontSize: '36px',
+        fontSize: '24px',
         border: `1.5px solid ${theme.palette.lightColor.main}`,
+        borderRadius: '0px',
+        ':hover': {
+          color: theme.palette.darkColor.main,
+          backgroundColor: theme.palette.lightColor.main,
+          opacity: 0.8,
+        },
       })}
     >
       Explore
