@@ -8,7 +8,7 @@ import {
 import AboutPage from './pages/about-page';
 import ContactPage from './pages/contact-page';
 import LandingPage from './pages/landing-page';
-import PortfolioPage from './pages/portoflio-page';
+import PortfolioPage from './pages/portfolio-page';
 
 import MainLayout from './components/main-layout';
 
