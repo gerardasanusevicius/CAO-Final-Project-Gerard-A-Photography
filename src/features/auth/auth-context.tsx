@@ -10,7 +10,7 @@ export type AuthContextType = {
   error: string | null,
   clearError: VoidFunction,
   login: (crudentials: Crudentials, next: string) => void,
-  logout: () => void,
+  logout: VoidFunction,
 };
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
