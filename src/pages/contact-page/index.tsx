@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
-import Section from '../components/section';
+import Section from '../../components/section';
 
 const ContactPage: React.FC = () => (
   <Container>
