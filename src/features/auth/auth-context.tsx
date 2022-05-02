@@ -1,7 +1,7 @@
 import React, { createContext, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Crudentials, Admin } from '../../../types';
-import useLocalStorage from '../../../hooks/use-local-storage-state';
+import { Crudentials, Admin } from '../../types';
+import useLocalStorage from '../../hooks/use-local-storage-state';
 import AuthService from './auth-service';
 
 export type AuthContextType = {

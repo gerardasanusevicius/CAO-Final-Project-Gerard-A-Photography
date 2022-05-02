@@ -4,7 +4,7 @@ import React, {
 import { useSearchParams } from 'react-router-dom';
 import { TextField } from '@mui/material';
 
-import AuthContext from '../features/auth/auth-context';
+import AuthContext from '../../features/auth/auth-context';
 import AuthForm from './auth-form';
 
 const LoginPage: React.FC = () => {
@@ -16,7 +16,7 @@ const LoginPage: React.FC = () => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     const nextPage = searchParams.get('next') ?? '/';
-    login(nextPage);
+    login({ username, password }, nextPage);
   };
 
   return (

@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@mui/material';
 import lightTheme from '../../styles/theme';
-import AuthContext from '../features/auth/auth-context';
+import AuthContext from '../../features/auth/auth-context';
 
 type AuthFormProps = {
   formTitle: string,

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button } from '@mui/material';
-import AuthContext from '../features/auth/auth-context';
+import AuthContext from '../../features/auth/auth-context';
 
 const AdminPage: React.FC = () => {
   const { logout } = useContext(AuthContext);

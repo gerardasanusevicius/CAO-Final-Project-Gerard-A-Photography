@@ -13,7 +13,7 @@ import LoginPage from './pages/login-page';
 import AdminPage from './pages/admin-page/admin-page';
 
 import MainLayout from './components/main-layout';
-import { AuthProvider } from './pages/features/auth/auth-context';
+import { AuthProvider } from './features/auth/auth-context';
 import RequireAuth from './routing/require-auth';
 
 const App: React.FC = () => (
