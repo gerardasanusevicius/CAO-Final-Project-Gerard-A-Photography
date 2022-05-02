@@ -6,6 +6,7 @@ import {
   Paper,
   Typography,
 } from '@mui/material';
+import lightTheme from '../../styles/theme';
 
 type AuthFormProps = {
   formTitle: string,
@@ -22,7 +23,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
   <Container sx={{ pt: 10 }}>
     <Paper
       component="form"
-      elevation={3}
+      elevation={1}
       sx={{
         display: 'flex',
         mx: 'auto',
@@ -30,7 +31,8 @@ const AuthForm: React.FC<AuthFormProps> = ({
         alignItems: 'center',
         gap: 1,
         p: 3,
-        width: 400,
+        width: 350,
+        borderRadius: 0,
       }}
       onSubmit={onSubmit}
     >
@@ -54,6 +56,10 @@ const AuthForm: React.FC<AuthFormProps> = ({
         variant="outlined"
         size="large"
         type="submit"
+        sx={{
+          borderRadius: 0,
+          color: lightTheme.palette.darkColor.main,
+        }}
       >
         {submitText}
       </Button>

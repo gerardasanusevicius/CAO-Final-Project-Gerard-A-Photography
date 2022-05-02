@@ -7,7 +7,7 @@ const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const { loggedIn } = useContext(AuthContext);
 
   if (!loggedIn) {
-    return <Navigate to={`/auth/login?next=${location.pathname}`} />;
+    return <Navigate to={`/login?next=${location.pathname}`} />;
   }
 
   return children;

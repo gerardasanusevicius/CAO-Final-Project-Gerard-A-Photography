@@ -28,9 +28,9 @@ export const AuthProvider: React.FC = ({ children }) => {
   const [loggedIn, setLoggedIn] = useLocalStorage<AuthContextType['loggedIn']>('loggedIn', false);
   const [user, setUser] = useState<AuthContextType['user']>(null);
 
-  const login: AuthContextType['login'] = (crudentials: Crudentials, next) => {
+  const login: AuthContextType['login'] = () => {
     setLoggedIn(true);
-    navigate(next);
+    navigate('/admin');
   };
 
   const logout: AuthContextType['logout'] = () => {
