@@ -8,6 +8,18 @@ namespace AuthService {
     if (tempAdmins.length === 0) {
       throw new Error('User with such email was not found');
     }
-  };
 
+    const [tempAdmin] = tempAdmins;
+
+    if (tempAdmin.password !== password) {
+      throw new Error('Passwords do not match');
+    }
+
+    return {
+      username: tempAdmin.username,
+      password: tempAdmin.password,
+    };
+  };
 }
+
+export default AuthService;
