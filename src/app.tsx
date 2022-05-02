@@ -9,6 +9,8 @@ import AboutPage from './pages/about-page';
 import ContactPage from './pages/contact-page';
 import LandingPage from './pages/landing-page';
 import PortfolioPage from './pages/portfolio-page';
+import LoginPage from './pages/login-page';
+import AdminPage from './pages/admin-page/admin-page';
 
 import MainLayout from './components/main-layout';
 
