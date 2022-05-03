@@ -35,7 +35,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
               position: 'absolute',
               top: 0,
               minWidth: contentWidth,
-              mt: 12,
+              mt: 3,
             }}
             color="error"
             onClose={clearError}
@@ -54,7 +54,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
           alignItems: 'center',
           gap: 1,
           p: 3,
-          width: 350,
+          width: contentWidth,
           borderRadius: 0,
         }}
         onSubmit={onSubmit}

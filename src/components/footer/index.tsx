@@ -19,7 +19,7 @@ const Footer: React.FC = () => (
       display: 'flex',
       alignItems: 'center',
       padding: '0 90px',
-      position: 'absolute',
+      position: 'fixed',
       left: '0px',
       bottom: '0px',
       right: '0px',
