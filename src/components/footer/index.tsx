@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '@mui/material';
+import { Box } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -19,6 +19,10 @@ const Footer: React.FC = () => (
       display: 'flex',
       alignItems: 'center',
       padding: '0 90px',
+      position: 'absolute',
+      left: '0px',
+      bottom: '0px',
+      right: '0px',
     }}
   >
     <Paragraph>
