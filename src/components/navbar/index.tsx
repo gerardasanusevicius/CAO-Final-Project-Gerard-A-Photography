@@ -21,6 +21,7 @@ const Navbar: React.FC = () => (
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
+        mr: '-25px',
       }}
     >
       <Container
@@ -33,7 +34,13 @@ const Navbar: React.FC = () => (
         <NavbarLink to="/contacts">Contacts</NavbarLink>
       </Container>
       <NavbarLink to="/">
-        <Box component="img" src="./logo.png" sx={{ width: '275px' }} />
+        <Box
+          component="img"
+          src="./logo.png"
+          sx={{
+            width: '275px',
+          }}
+        />
       </NavbarLink>
     </Toolbar>
   </AppBar>

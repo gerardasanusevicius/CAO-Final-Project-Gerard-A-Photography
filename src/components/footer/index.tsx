@@ -20,7 +20,7 @@ const Footer: React.FC = () => (
       height: barHeight,
       display: 'flex',
       alignItems: 'center',
-      padding: '0 80px',
+      padding: '0px 62.5px 0px 80px',
       position: 'fixed',
       left: '0px',
       bottom: '0px',
