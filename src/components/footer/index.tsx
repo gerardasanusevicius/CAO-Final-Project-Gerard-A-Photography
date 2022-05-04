@@ -6,6 +6,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FooterLink from './footer-link';
 import Paragraph from '../paragraph';
 
+export const barHeight = '65px';
+
 const Footer: React.FC = () => (
   <Box
     sx={{
@@ -15,10 +17,10 @@ const Footer: React.FC = () => (
       maxWidth: '100%',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      height: '137.5px',
+      height: barHeight,
       display: 'flex',
       alignItems: 'center',
-      padding: '0 90px',
+      padding: '0 80px',
       position: 'fixed',
       left: '0px',
       bottom: '0px',
@@ -26,7 +28,9 @@ const Footer: React.FC = () => (
     }}
   >
     <Paragraph>
-      Content of this webpage belongs to Gerardas Anusevicius. Any illegal distribution may lead to legal prosecution
+      Content of this webpage belongs to Gerardas Anusevicius.
+      <br />
+      Any illegal distribution may lead to legal prosecution
     </Paragraph>
     <Box sx={{
       display: 'flex',

@@ -9,7 +9,7 @@ import NavbarLink from './navbar-link';
 
 const Navbar: React.FC = () => (
   <AppBar
-    position="static"
+    position="fixed"
     sx={{
       bgcolor: '#f7f7f7',
       border: 0,
