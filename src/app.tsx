@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import './app.css';
 
 import AboutPage from './pages/about-page';
 import ContactPage from './pages/contact-page';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Divider } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 import Paragraph from '../../components/paragraph';
 import AboutPicture from './gerard_about_picture.jpg';
 
