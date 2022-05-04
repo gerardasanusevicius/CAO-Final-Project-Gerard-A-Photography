@@ -24,8 +24,9 @@ const LandingPage: React.FC = () => (
       sx={(theme) => ({
         color: theme.palette.lightColor.main,
         overflow: 'hidden',
-        marginTop: '225px',
-        marginLeft: '1240px',
+        position: 'absolute',
+        bottom: '55px',
+        right: '155px',
         fontSize: '24px',
         border: `1.5px solid ${theme.palette.lightColor.main}`,
         borderRadius: '0px',
