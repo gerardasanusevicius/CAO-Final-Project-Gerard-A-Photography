@@ -6,6 +6,7 @@ import {
   Container,
   Paper,
   Typography,
+  CircularProgress,
 } from '@mui/material';
 import lightTheme from '../../styles/theme';
 import AuthContext from '../../features/auth/auth-context';
@@ -13,6 +14,7 @@ import AuthContext from '../../features/auth/auth-context';
 type AuthFormProps = {
   formTitle: string,
   submitText: string,
+  btnActive?: boolean,
   onSubmit?: React.FormEventHandler<HTMLFormElement>,
 };
 
@@ -21,10 +23,11 @@ const contentWidth = 350;
 const AuthForm: React.FC<AuthFormProps> = ({
   formTitle,
   submitText,
+  btnActive = true,
   onSubmit,
   children,
 }) => {
-  const { error, clearError } = useContext(AuthContext);
+  const { loading, error, clearError } = useContext(AuthContext);
 
   return (
     <Container sx={{ position: 'relative', pt: 10 }}>
@@ -79,12 +82,13 @@ const AuthForm: React.FC<AuthFormProps> = ({
           variant="outlined"
           size="large"
           type="submit"
+          disabled={!btnActive || loading}
           sx={{
             borderRadius: 0,
             color: lightTheme.palette.darkColor.main,
           }}
         >
-          {submitText}
+          {loading ? <CircularProgress size={15} /> : submitText }
         </Button>
       </Paper>
     </Container>
