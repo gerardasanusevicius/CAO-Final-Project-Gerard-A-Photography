@@ -26,8 +26,9 @@ const PortfolioPage: React.FC = () => {
     return (
       <Container>
         {
-          pictures.map((picture) => (
+          pictures.map(({ id, ...picture }) => (
             <Box
+              key={id}
               component="img"
               sx={{
                 width: '300px',
