@@ -1,9 +1,18 @@
 import React from 'react';
 import { Box, Container, Button } from '@mui/material';
+import { useDispatch } from 'react-redux';
 import { useRootSelector } from '../../store/hooks';
 
 const ReduxTestPage: React.FC = () => {
   const pictures = useRootSelector((state) => state.pictures);
+  const dispatch = useDispatch();
+
+  const deletePicture = (id: string): void => {
+    dispatch({
+      type: 'DELETE_PICTURE',
+      payload: { id },
+    });
+  };
 
   return (
     <Container
@@ -36,6 +45,7 @@ const ReduxTestPage: React.FC = () => {
                   top: '0px',
                   right: '0px',
                 }}
+                onClick={() => deletePicture(id)}
               >
                 X
               </Button>

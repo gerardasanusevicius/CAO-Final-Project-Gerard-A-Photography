@@ -26,7 +26,9 @@ const mainReducer: Reducer<State, Action> = (state = initialState, action) => {
   if (action.type === 'DELETE_PICTURE') {
     return {
       ...state,
-
+      pictures: state.pictures.filter((picture) => picture.id !== action.payload.id),
+      // arba
+      // pictures: [...state.pictures.slice(0, action.payload.id), ...state.pictures.slice(action.payload.id + 1)],
     };
   }
   return { ...state };
