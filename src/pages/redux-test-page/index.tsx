@@ -1,25 +1,46 @@
 import React from 'react';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Button } from '@mui/material';
 import { useRootSelector } from '../../store/hooks';
 
 const ReduxTestPage: React.FC = () => {
   const pictures = useRootSelector((state) => state.pictures);
 
   return (
-    <Container>
+    <Container
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+      }}
+    >
       {
           pictures.map(({ id, ...picture }) => (
             <Box
               key={id}
-              component="img"
               sx={{
                 width: '300px',
                 height: '300px',
                 margin: '30px',
+                position: 'relative',
               }}
-              src={picture.src}
-              alt={picture.title}
-            />
+            >
+              <img
+                src={picture.src}
+                alt={picture.title}
+                width="300px"
+                height="300px"
+              />
+              <Button
+                variant="text"
+                sx={{
+                  position: 'absolute',
+                  top: '0px',
+                  right: '0px',
+                }}
+              >
+                X
+              </Button>
+            </Box>
+
           ))
         }
     </Container>

@@ -1,3 +1,5 @@
+import Picture from '../types/picture';
+
 export type State = {
   pictures: Picture[]
 };

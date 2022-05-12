@@ -23,17 +23,13 @@ const initialState: State = {
 };
 
 const mainReducer: Reducer<State, Action> = (state = initialState, action) => {
-  switch (action.type) {
-    case 'ADD_PICTURE':
-      return state;
-    case 'REMOVE_PICTURE':
-      return state;
-    case 'UPDATE_PICTURE':
-      return state;
+  if (action.type === 'DELETE_PICTURE') {
+    return {
+      ...state,
 
-    default:
-      return state;
+    };
   }
+  return { ...state };
 };
 
 export default mainReducer;
