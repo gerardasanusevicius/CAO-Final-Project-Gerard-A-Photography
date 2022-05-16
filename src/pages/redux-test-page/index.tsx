@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Container, Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
+import ClearIcon from '@mui/icons-material/Clear';
 import { useRootSelector } from '../../store/hooks';
 
 const ReduxTestPage: React.FC = () => {
@@ -47,7 +48,7 @@ const ReduxTestPage: React.FC = () => {
                 }}
                 onClick={() => deletePicture(id)}
               >
-                X
+                <ClearIcon />
               </Button>
             </Box>
 

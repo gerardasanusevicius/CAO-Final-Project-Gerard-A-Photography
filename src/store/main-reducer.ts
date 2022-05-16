@@ -3,6 +3,7 @@ import { Reducer } from 'redux';
 import { State, Action } from './types';
 
 const initialState: State = {
+
   pictures: [
     {
       id: '1',
