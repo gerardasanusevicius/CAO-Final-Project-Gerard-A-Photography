@@ -2,16 +2,10 @@ import React from 'react';
 import { Box, Divider } from '@mui/material';
 import Paragraph from '../../components/paragraph';
 import AboutPicture from './gerard_about_picture.jpg';
+import InfoContainer from '../../components/info-container';
 
 const AboutPage: React.FC = () => (
-  <Box sx={{
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    p: '40px 80px',
-    m: '0px',
-  }}
-  >
+  <InfoContainer>
     <Paragraph sx={{
       width: '30%',
       m: 'auto 0px',
@@ -49,7 +43,7 @@ const AboutPage: React.FC = () => (
         height: '450px',
       }}
     />
-  </Box>
+  </InfoContainer>
 );
 
 export default AboutPage;
