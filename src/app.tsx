@@ -11,6 +11,7 @@ import AboutPage from './pages/about-page';
 import ContactPage from './pages/contact-page';
 import LandingPage from './pages/landing-page';
 import PortfolioPage from './pages/portfolio-page';
+import ProjectsPage from './pages/projects-page';
 import LoginPage from './pages/login-page';
 import AdminPage from './pages/admin-page/admin-page';
 import ReduxTestPage from './pages/redux-test-page';
@@ -29,6 +30,7 @@ const App: React.FC = () => (
           <Route path="/" element={<LandingPage />} />
           <Route element={<MainLayout />}>
             <Route path="portfolio" element={<PortfolioPage />} />
+            <Route path="projects" element={<ProjectsPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contacts" element={<ContactPage />} />
           </Route>

@@ -7,7 +7,7 @@ import InfoContainer from '../../components/info-container';
 const AboutPage: React.FC = () => (
   <InfoContainer>
     <Paragraph sx={{
-      width: '30%',
+      width: '36%',
       m: 'auto 0px',
     }}
     >
