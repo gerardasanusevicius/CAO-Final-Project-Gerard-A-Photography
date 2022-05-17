@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import axios from 'axios';
 import Picture from '../../types/picture';
+import InfoContainer from '../../components/info-container';
 
 const initialPicture = {
   id: 'test',
@@ -24,7 +25,7 @@ const PortfolioPage: React.FC = () => {
 
   if (pictures) {
     return (
-      <Container>
+      <InfoContainer>
         {
           pictures.map(({ id, ...picture }) => (
             <Box
@@ -33,14 +34,13 @@ const PortfolioPage: React.FC = () => {
               sx={{
                 width: '300px',
                 height: '300px',
-                margin: '30px',
               }}
               src={picture.src}
               alt={picture.title}
             />
           ))
         }
-      </Container>
+      </InfoContainer>
     );
   }
 
