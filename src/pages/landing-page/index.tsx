@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Button } from '@mui/material';
 import Background from './background';
+import SocialIcons from '../../components/social-icons';
 
 const LandingPage: React.FC = () => (
   <Background>
@@ -9,8 +10,8 @@ const LandingPage: React.FC = () => (
       variant="h1"
       sx={(theme) => ({
         textTransform: 'uppercase',
-        marginLeft: '820px',
-        marginBottom: '160px',
+        position: 'absolute',
+        left: '820px',
         color: theme.palette.darkColor.main,
         opacity: 0.85,
       })}
@@ -30,6 +31,7 @@ const LandingPage: React.FC = () => (
         fontSize: '24px',
         border: `1.5px solid ${theme.palette.lightColor.main}`,
         borderRadius: '0px',
+        transition: '0.5s',
         ':hover': {
           color: theme.palette.darkColor.main,
           backgroundColor: theme.palette.lightColor.main,
@@ -40,6 +42,7 @@ const LandingPage: React.FC = () => (
       Explore
 
     </Button>
+    <SocialIcons position="absolute" left="1320px" top="28px" color="theme.primary.lightColor.main" />
   </Background>
 );
 

@@ -1,10 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FooterLink from './footer-link';
 import Paragraph from '../paragraph';
+import SocialIcons from '../social-icons';
 
 export const barHeight = '65px';
 
@@ -32,15 +29,7 @@ const Footer: React.FC = () => (
       <br />
       Any illegal distribution may lead to legal prosecution
     </Paragraph>
-    <Box sx={{
-      display: 'flex',
-      flexDirection: 'row',
-    }}
-    >
-      <FooterLink href="https://www.facebook.com/Geanphotography" target="_blank"><FacebookIcon /></FooterLink>
-      <FooterLink href="https://www.instagram.com/gerard.a.photography/" target="_blank"><InstagramIcon /></FooterLink>
-      <FooterLink href="https://www.linkedin.com/in/gerardas-anusevičius-783497194/" target="_blank"><LinkedInIcon /></FooterLink>
-    </Box>
+    <SocialIcons />
   </Box>
 );
 

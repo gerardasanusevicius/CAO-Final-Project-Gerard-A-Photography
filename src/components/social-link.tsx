@@ -1,6 +1,6 @@
 import { styled, Link } from '@mui/material';
 
-const FooterLink = styled(Link)(({ theme }) => ({
+const SocialLink = styled(Link)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   color: theme.palette.primary.main,
@@ -9,10 +9,6 @@ const FooterLink = styled(Link)(({ theme }) => ({
   padding: theme.spacing(0, 2),
   fontSize: '13.5px',
   transition: theme.transitions.create('color'),
-
-  ':hover': {
-    color: theme.palette.primary.dark,
-  },
 }));
 
-export default FooterLink;
+export default SocialLink;
