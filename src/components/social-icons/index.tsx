@@ -11,7 +11,7 @@ type SocialIconsProps = {
   right?: string | number,
   top?: string | number,
   bottom?: string | number,
-  color?: string,
+  color?: string | number,
 };
 
 const SocialIcons: React.FC<SocialIconsProps> = ({
