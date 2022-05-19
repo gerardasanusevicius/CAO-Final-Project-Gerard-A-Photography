@@ -22,6 +22,9 @@ const Footer: React.FC = () => (
       left: '0px',
       bottom: '0px',
       right: '0px',
+      ':hover .sociallink': {
+        color: 'mediumColor.main',
+      },
     }}
   >
     <Paragraph>
@@ -29,7 +32,7 @@ const Footer: React.FC = () => (
       <br />
       Any illegal distribution may lead to legal prosecution
     </Paragraph>
-    <SocialIcons />
+    <SocialIcons color="darkColor.main" />
   </Box>
 );
 

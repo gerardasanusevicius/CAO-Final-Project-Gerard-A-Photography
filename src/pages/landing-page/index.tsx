@@ -13,7 +13,6 @@ const LandingPage: React.FC = () => (
         position: 'absolute',
         left: '820px',
         color: theme.palette.darkColor.main,
-        opacity: 0.85,
       })}
     >
       Gerard A. Photography
@@ -35,7 +34,6 @@ const LandingPage: React.FC = () => (
         ':hover': {
           color: theme.palette.darkColor.main,
           backgroundColor: theme.palette.lightColor.main,
-          opacity: 0.8,
         },
       })}
     >
