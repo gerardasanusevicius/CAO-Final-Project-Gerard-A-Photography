@@ -2,8 +2,10 @@
 import { Reducer } from 'redux';
 import { AuthState, AuthAction } from './types';
 
+import { getLocalStorageItem, setLocalStorageItem } from '../../../helpers/local-storage-helpers';
+
 const initialState: AuthState = {
-  user: null,
+  user: getLocalStorageItem('user'),
   error: null,
   loading: false,
 };
@@ -11,6 +13,8 @@ const initialState: AuthState = {
 const authReducer: Reducer<AuthState, AuthAction> = (state = initialState, action) => {
   switch (action.type) {
     case 'AUTH_SUCCESS': {
+      setLocalStorageItem('user', action.payload.user);
+      console.log('success');
       return {
         ...state,
         user: action.payload.user,
@@ -27,6 +31,7 @@ const authReducer: Reducer<AuthState, AuthAction> = (state = initialState, actio
     }
 
     case 'AUTH_LOGOUT': {
+      localStorage.removeItem('user');
       return {
         ...state,
         user: null,

@@ -4,10 +4,13 @@ import {
   Button, Container, TextField, Toolbar,
 } from '@mui/material';
 
+import { useRootSelector } from '../../store';
+import { selectUser } from '../../store/selectors';
 import { authLogoutAction } from '../../store/action-creators';
 import { useRootDispatch } from '../../store/hooks';
 
 const AdminPage: React.FC = () => {
+  const user = useRootSelector(selectUser);
   const dispatch = useRootDispatch();
 
   const logout = () => {

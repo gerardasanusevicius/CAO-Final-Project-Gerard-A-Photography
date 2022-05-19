@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 import AuthService from './auth-service';
-import { Admin, Crudentials } from '../../../types';
+import { Admin, Credentials } from '../../../types';
 import {
   AuthSuccessAction,
   AuthFailureAction,
@@ -37,12 +37,12 @@ export const createAuthFailureAction = (error: string): AuthFailureAction => ({
 });
 
 export const createLoginAction = (
-  crudentials: Crudentials,
+  credentials: Credentials,
   redirect: string,
 ) => async (dispatch: Dispatch<AppAction>): Promise<void> => {
   dispatch(authLoadingAction);
   try {
-    const user = await AuthService.login(crudentials);
+    const user = await AuthService.login(credentials);
     const authSuccessAction = createAuthSuccessAction(user);
     const navigationSetRedirectAction = createNavigationSetRedirectAction(redirect);
     dispatch(navigationSetRedirectAction);

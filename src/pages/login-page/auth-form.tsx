@@ -9,9 +9,10 @@ import {
   CircularProgress,
 } from '@mui/material';
 
-import { useRootSelector, useRootDispatch } from '../../store/hooks';
+import { useRootDispatch } from '../../store/hooks';
+import { useRootSelector } from '../../store';
 import { selectLoggedIn, selectAuthError } from '../../store/selectors';
-import { authClearErrorAction } from '../../store/features/auth/auth-action-creators';
+import { authClearErrorAction } from '../../store/action-creators';
 
 type AuthFormProps = {
   formTitle: string,

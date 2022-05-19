@@ -5,9 +5,10 @@ import { useFormik, FormikConfig } from 'formik';
 import * as Yup from 'yup';
 
 import AuthForm from './auth-form';
-import { useRootSelector, useRootDispatch } from '../../store/hooks';
+import { useRootSelector } from '../../store';
 import { selectAuthLoading } from '../../store/selectors';
-import { createLoginAction } from '../../store/features/auth/auth-action-creators';
+import { createLoginAction } from '../../store/action-creators';
+import { useRootDispatch } from '../../store/hooks';
 
 type LoginValues = {
   username: string,
