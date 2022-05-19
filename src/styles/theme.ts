@@ -10,15 +10,6 @@ const lightTheme = createTheme(theme, {
       light: '#ededed',
       dark: '#242424',
     },
-    lightColor: {
-      main: '#ededed',
-    },
-    mediumColor: {
-      main: '#a6a6a6',
-    },
-    darkColor: {
-      main: '#242424',
-    },
     background: {
       default: '#f7f7f7',
     },

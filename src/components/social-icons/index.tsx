@@ -36,7 +36,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
     <SocialLink
       sx={{
         ':hover .css-i4bv87-MuiSvgIcon-root': {
-          color: color || 'darkColor.main',
+          color: color || 'primary.dark',
         },
       }}
       className="sociallink"
@@ -49,7 +49,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
     <SocialLink
       sx={{
         ':hover .css-i4bv87-MuiSvgIcon-root': {
-          color: color || 'darkColor.main',
+          color: color || 'primary.dark',
         },
       }}
       className="sociallink"
@@ -62,7 +62,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
     <SocialLink
       sx={{
         ':hover .css-i4bv87-MuiSvgIcon-root': {
-          color: color || 'darkColor.main',
+          color: color || 'primary.dark',
         },
       }}
       className="sociallink"

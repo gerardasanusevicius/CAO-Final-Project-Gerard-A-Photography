@@ -3,7 +3,7 @@ import { styled, Link } from '@mui/material';
 const SocialLink = styled(Link)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  color: theme.palette.darkColor.main,
+  color: theme.palette.primary.dark,
   textDecoration: 'none',
   alignSelf: 'stretch',
   padding: theme.spacing(0, 2),

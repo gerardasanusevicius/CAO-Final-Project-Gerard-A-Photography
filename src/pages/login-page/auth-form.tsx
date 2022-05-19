@@ -85,7 +85,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
           disabled={!btnActive || loading}
           sx={{
             borderRadius: 0,
-            color: lightTheme.palette.darkColor.main,
+            color: lightTheme.palette.primary.main,
           }}
         >
           {loading ? <CircularProgress size={15} /> : submitText }
