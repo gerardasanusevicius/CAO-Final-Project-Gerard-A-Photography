@@ -1,19 +1,25 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   AppBar,
-  Button, Container, TextField, Toolbar, Typography,
+  Button, Container, TextField, Toolbar,
 } from '@mui/material';
-import AuthContext from '../../features/auth/auth-context';
+
+import { authLogoutAction } from '../../store/action-creators';
+import { useRootDispatch } from '../../store/hooks';
 
 const AdminPage: React.FC = () => {
-  const { logout } = useContext(AuthContext);
+  const dispatch = useRootDispatch();
+
+  const logout = () => {
+    dispatch(authLogoutAction);
+  };
 
   return (
     <>
       <AppBar
         position="fixed"
         sx={{
-          bgcolor: '#f7f7f7',
+          bgcolor: 'primary.light',
           border: 0,
           boxShadow: 'none',
           maxWidth: '100%',

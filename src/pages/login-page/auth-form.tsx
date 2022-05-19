@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   Alert,
   Box,
@@ -8,8 +8,10 @@ import {
   Typography,
   CircularProgress,
 } from '@mui/material';
-import lightTheme from '../../styles/theme';
-import AuthContext from '../../features/auth/auth-context';
+
+import { useRootSelector, useRootDispatch } from '../../store/hooks';
+import { selectLoggedIn, selectAuthError } from '../../store/selectors';
+import { authClearErrorAction } from '../../store/features/auth/auth-action-creators';
 
 type AuthFormProps = {
   formTitle: string,
@@ -27,7 +29,13 @@ const AuthForm: React.FC<AuthFormProps> = ({
   onSubmit,
   children,
 }) => {
-  const { loading, error, clearError } = useContext(AuthContext);
+  const dispatch = useRootDispatch();
+  const loading = useRootSelector(selectLoggedIn);
+  const error = useRootSelector(selectAuthError);
+
+  const clearError = () => {
+    dispatch(authClearErrorAction);
+  };
 
   return (
     <Container sx={{ position: 'relative', pt: 10 }}>
@@ -85,7 +93,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
           disabled={!btnActive || loading}
           sx={{
             borderRadius: 0,
-            color: lightTheme.palette.primary.main,
+            color: 'primary.main',
           }}
         >
           {loading ? <CircularProgress size={15} /> : submitText }

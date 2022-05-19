@@ -1,10 +1,14 @@
-import Picture from '../types/picture';
+import { ThunkDispatch } from 'redux-thunk';
+import { AuthAction, AuthState } from './features/auth/types';
+import { NavigationAction, NavigationState } from './features/navigation/types';
+import { ReduxTestAction, ReduxTestState } from './features/redux-test/types';
 
-export type State = {
-  pictures: Picture[]
+export type RootState = {
+  reduxTest: ReduxTestState,
+  auth: AuthState,
+  navigation: NavigationState,
 };
 
-export type Action = {
-  type: string,
-  payload: any,
-};
+export type AppAction = AuthAction | NavigationAction | ReduxTestAction;
+
+export type AppDispatch = ThunkDispatch<RTCIceConnectionState, undefined, AppAction>;

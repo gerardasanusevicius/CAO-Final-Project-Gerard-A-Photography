@@ -3,9 +3,10 @@ import { Box, Container, Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useRootSelector } from '../../store/hooks';
+import { selectReduxTestPictures } from '../../store/selectors';
 
 const ReduxTestPage: React.FC = () => {
-  const pictures = useRootSelector((state) => state.pictures);
+  const pictures = useRootSelector(selectReduxTestPictures);
   const dispatch = useDispatch();
 
   const deletePicture = (id: string): void => {
