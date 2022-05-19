@@ -18,6 +18,7 @@ import ReduxTestPage from './pages/redux-test-page';
 
 import MainLayout from './components/main-layout';
 import RequireAuth from './routing/require-auth';
+import RequireVisitor from './routing/require-visitor';
 
 import store from './store';
 
@@ -32,7 +33,14 @@ const App: React.FC = () => (
           <Route path="about" element={<AboutPage />} />
           <Route path="contacts" element={<ContactPage />} />
         </Route>
-        <Route path="login" element={<LoginPage />} />
+        <Route
+          path="login"
+          element={(
+            <RequireVisitor>
+              <LoginPage />
+            </RequireVisitor>
+        )}
+        />
         <Route
           path="/admin"
           element={(
