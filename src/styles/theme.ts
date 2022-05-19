@@ -7,11 +7,11 @@ const lightTheme = createTheme(theme, {
   palette: {
     primary: {
       main: '#a6a6a6',
-      light: '#ededed',
-      dark: '#242424',
+      light: '#f2f2f2',
+      dark: '#262626',
     },
     background: {
-      default: '#f7f7f7',
+      default: '#f2f2f2',
     },
   },
   typography: {

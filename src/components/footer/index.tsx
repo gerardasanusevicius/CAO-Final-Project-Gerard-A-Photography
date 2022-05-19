@@ -8,7 +8,7 @@ export const barHeight = '65px';
 const Footer: React.FC = () => (
   <Box
     sx={{
-      bgcolor: '#f7f7f7',
+      bgcolor: 'primary.light',
       border: 0,
       boxShadow: 'none',
       maxWidth: '100%',
