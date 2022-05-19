@@ -42,7 +42,7 @@ const LandingPage: React.FC = () => (
       Explore
 
     </Button>
-    <SocialIcons position="absolute" left="1320px" top="28px" color="red" />
+    <SocialIcons position="absolute" left="1320px" top="28px" color="lightColor.main" />
   </Background>
 );
 

@@ -11,26 +11,31 @@ type SocialIconsProps = {
   right?: string | number,
   top?: string | number,
   bottom?: string | number,
-  color?: string | number,
+  color?: string,
 };
 
 const SocialIcons: React.FC<SocialIconsProps> = ({
-  position, left, right, top, bottom, color,
+  position = 'static',
+  left = null,
+  right = null,
+  top = null,
+  bottom = null,
+  color,
 }) => (
   <Box sx={{
     display: 'flex',
     flexDirection: 'row',
-    position: position || 'static',
-    left: left || null,
-    right: right || null,
-    top: top || null,
-    bottom: bottom || null,
+    position,
+    left,
+    right,
+    top,
+    bottom,
   }}
   >
     <SocialLink
       sx={(theme) => ({
         ':hover': {
-          color: color || theme.palette.primary.dark,
+          color: color || 'darkColor.main',
         },
       })}
       href="https://www.facebook.com/Geanphotography"
@@ -42,7 +47,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
     <SocialLink
       sx={(theme) => ({
         ':hover': {
-          color: color || theme.palette.primary.dark,
+          color: color || 'darkColor.main',
         },
       })}
       href="https://www.instagram.com/gerard.a.photography/"
@@ -54,7 +59,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
     <SocialLink
       sx={(theme) => ({
         ':hover': {
-          color: color || theme.palette.primary.dark,
+          color: color || 'darkColor.main',
         },
       })}
       href="https://www.linkedin.com/in/gerardas-anusevičius-783497194/"

@@ -13,9 +13,3 @@ declare module '@mui/material/styles/createPalette' {
     darkColor:PaletteColor;
   }
 }
-
-declare module '@mui/material/styles/createMixins' {
-  interface Mixins {
-    section: CSSProperties;
-  }
-}
