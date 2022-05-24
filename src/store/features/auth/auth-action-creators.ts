@@ -13,7 +13,7 @@ import {
   createNavigationSetRedirectAction,
   navigationClearRedirectAction,
 } from '../navigation/navigation-action-creators';
-import { AppAction } from '../../types';
+import { AppAction } from '../../redux-types';
 
 export const authLoadingAction: AuthLoadingAction = {
   type: AuthActionType.AUTH_LOADING,
