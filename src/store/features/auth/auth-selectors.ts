@@ -1,4 +1,4 @@
-import { RootState } from "../../types";
+import { RootState } from '../../types';
 
 export const selectLoggedIn = (state: RootState) => Boolean(state.auth.user);
 
