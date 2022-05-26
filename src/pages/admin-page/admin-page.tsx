@@ -1,13 +1,14 @@
 import React from 'react';
 import {
   AppBar,
-  Button, Container, TextField, Toolbar,
+  Button, Container, Toolbar,
 } from '@mui/material';
 
 import { useRootSelector } from '../../store';
 import { selectUser } from '../../store/selectors';
 import { authLogoutAction } from '../../store/action-creators';
 import { useRootDispatch } from '../../store/hooks';
+import UploadForm from './upload-form';
 
 const AdminPage: React.FC = () => {
   const user = useRootSelector(selectUser);
@@ -44,26 +45,7 @@ const AdminPage: React.FC = () => {
           </Container>
         </Toolbar>
       </AppBar>
-      <Container sx={{
-        marginTop: '100px', width: '250px', display: 'flex', flexDirection: 'column',
-      }}
-      >
-        <TextField
-          id="title"
-          label="Title"
-          name="title"
-          type="text"
-          sx={{ marginBottom: '25px' }}
-        />
-        <TextField
-          id="url"
-          label="Url"
-          name="url"
-          type="url"
-          sx={{ marginBottom: '25px' }}
-        />
-        <Button type="submit">Upload</Button>
-      </Container>
+      <UploadForm />
     </>
   );
 };
