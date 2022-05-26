@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import axios from 'axios';
 import Picture from '../../types/picture';
-import InfoContainer from '../../components/info-container';
+import PictureContainer from './picture-container';
 
 const initialPicture = {
   id: 'test',
@@ -19,13 +19,13 @@ const PortfolioPage: React.FC = () => {
         setPictures(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        throw new Error(err);
       });
   }, []);
 
   if (pictures) {
     return (
-      <InfoContainer>
+      <PictureContainer>
         {
           pictures.map(({ id, ...picture }) => (
             <Box
@@ -40,7 +40,7 @@ const PortfolioPage: React.FC = () => {
             />
           ))
         }
-      </InfoContainer>
+      </PictureContainer>
     );
   }
 
