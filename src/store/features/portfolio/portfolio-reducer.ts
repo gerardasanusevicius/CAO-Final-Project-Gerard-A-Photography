@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/default-param-last */
 import { Reducer } from 'redux';
-import { PortfolioState, PortfolioAction } from './types';
+import { PortfolioState, PortfolioAction } from './portfolio-types';
 
 const initialState: PortfolioState = {
 
