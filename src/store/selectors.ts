@@ -1,3 +1,3 @@
 export * from './features/auth/auth-selectors';
 export * from './features/navigation/navigation-selectors';
-export * from './features/redux-test/redux-test-selectors';
+export * from './features/portfolio/portfolio-selectors';

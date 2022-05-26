@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Typography } from '@mui/material';
-import axios from 'axios';
-import Picture from '../../types/picture';
-import PictureContainer from './picture-container';
+import React from 'react';
+import {
+  Box, Typography, Button,
+} from '@mui/material';
 
-const initialPicture = {
-  id: 'test',
-  title: 'Test',
-  src: 'https://images.unsplash.com/photo-1607434472257-d9f8e57a643d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
-};
+import { useDispatch } from 'react-redux';
+import ClearIcon from '@mui/icons-material/Clear';
+
+import PictureContainer from './picture-container';
+import { useRootSelector } from '../../store/hooks';
+import { selectPortfolioPictures } from '../../store/selectors';
 
 const PortfolioPage: React.FC = () => {
-  const [pictures, setPictures] = useState<Picture[]>([initialPicture]);
+  const pictures = useRootSelector(selectPortfolioPictures);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    axios.get<Picture[]>('http://localhost:8000/pictures')
-      .then((res) => {
-        setPictures(res.data);
-      })
-      .catch((err) => {
-        throw new Error(err);
-      });
-  }, []);
+  const deletePicture = (id: string): void => {
+    dispatch({
+      type: 'DELETE_PICTURE',
+      payload: { id },
+    });
+  };
 
   if (pictures) {
     return (
@@ -34,10 +32,28 @@ const PortfolioPage: React.FC = () => {
               sx={{
                 width: '300px',
                 height: '300px',
+                margin: '30px',
+                position: 'relative',
               }}
-              src={picture.src}
-              alt={picture.title}
-            />
+            >
+              <img
+                src={picture.src}
+                alt={picture.title}
+                width="300px"
+                height="300px"
+              />
+              <Button
+                variant="text"
+                sx={{
+                  position: 'absolute',
+                  top: '0px',
+                  right: '0px',
+                }}
+                onClick={() => deletePicture(id)}
+              >
+                <ClearIcon />
+              </Button>
+            </Box>
           ))
         }
       </PictureContainer>

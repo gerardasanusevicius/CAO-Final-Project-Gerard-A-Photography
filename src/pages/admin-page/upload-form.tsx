@@ -2,7 +2,6 @@ import { Button, Container, TextField } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Picture } from '../../types';
 
 const UploadForm: React.FC = () => {
   const [title, setTitle] = useState('');

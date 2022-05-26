@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/default-param-last */
 import { Reducer } from 'redux';
-import { ReduxTestState, ReduxTestAction } from './types';
+import { PortfolioState, PortfolioAction } from './types';
 
-const initialState: ReduxTestState = {
+const initialState: PortfolioState = {
 
   pictures: [
     {
@@ -23,7 +23,7 @@ const initialState: ReduxTestState = {
   ],
 };
 
-const reduxTestReducer: Reducer<ReduxTestState, ReduxTestAction> = (state = initialState, action) => {
+const PortfolioReducer: Reducer<PortfolioState, PortfolioAction> = (state = initialState, action) => {
   if (action.type === 'DELETE_PICTURE') {
     return {
       ...state,
@@ -35,4 +35,4 @@ const reduxTestReducer: Reducer<ReduxTestState, ReduxTestAction> = (state = init
   return { ...state };
 };
 
-export default reduxTestReducer;
+export default PortfolioReducer;

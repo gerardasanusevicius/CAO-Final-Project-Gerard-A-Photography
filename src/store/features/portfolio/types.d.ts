@@ -1,6 +1,6 @@
 import { Picture } from '../../../types';
 
-export type ReduxTestState = {
+export type PortfolioState = {
   pictures: Picture[]
 };
 
@@ -12,4 +12,4 @@ export type DeletePicture = {
   },
 };
 
-export type ReduxTestAction = DeletePicture;
+export type PortfolioAction = DeletePicture;
