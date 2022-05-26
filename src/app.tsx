@@ -49,14 +49,6 @@ const App: React.FC = () => (
             </RequireAuth>
         )}
         />
-        <Route
-          path="/reduxtest"
-          element={(
-            <RequireAuth>
-              <ReduxTestPage />
-            </RequireAuth>
-        )}
-        />
       </Routes>
     </ReduxProvider>
   </BrowserRouter>
