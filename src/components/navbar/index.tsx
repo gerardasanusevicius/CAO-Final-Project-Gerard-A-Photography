@@ -26,7 +26,7 @@ const Navbar: React.FC = () => (
     >
       <Container
         sx={{
-          display: 'flex',
+          display: { md: 'flex' },
         }}
       >
         <NavbarLink to="/portfolio">Portfolio</NavbarLink>
