@@ -14,7 +14,6 @@ import PortfolioPage from './pages/portfolio-page';
 import ProjectsPage from './pages/projects-page';
 import LoginPage from './pages/login-page';
 import AdminPage from './pages/admin-page/admin-page';
-import ReduxTestPage from './pages/redux-test-page';
 
 import MainLayout from './components/main-layout';
 import RequireAuth from './routing/require-auth';

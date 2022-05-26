@@ -4,6 +4,7 @@ import PortfolioService from '../../../services/portfolio-service';
 import { Picture } from '../../../types';
 import { AppAction, RootState } from '../../redux-types';
 import {
+  PortfolioDeletePictureAction,
   PortfolioActionType,
   PortfolioFetchPicturesLoadingAction,
   PortfolioFetchPicturesSuccessAction,
@@ -22,6 +23,11 @@ const createPortfolioFetchPicturesSuccessAction = (pictures: Picture[]): Portfol
 const createPortfolioFetchPicturesFailureAction = (error: string): PortfolioFetchPicturesFailureAction => ({
   type: PortfolioActionType.PORTFOLIO_FETCH_PICTURES_FAILURE,
   payload: { error },
+});
+
+export const portfolioDeletePictureAction = (id: number): PortfolioDeletePictureAction => ({
+  type: PortfolioActionType.PORTFOLIO_DELETE_PICTURE,
+  payload: { id },
 });
 
 export const portfolioFetchPicturesAction = async (dispatch: Dispatch<AppAction>, getState: () => RootState): Promise<void> => {

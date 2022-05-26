@@ -13,11 +13,10 @@ export enum PortfolioActionType {
   PORTFOLIO_FETCH_PICTURES_FAILURE,
 }
 
-export type PortfolioDeletePicture = {
+export type PortfolioDeletePictureAction = {
   type: PortfolioActionType.PORTFOLIO_DELETE_PICTURE
   payload: {
-    id: string,
-    amount: number
+    id: number,
   },
 };
 
@@ -39,4 +38,4 @@ export type PortfolioFetchPicturesFailureAction = {
   }
 };
 
-export type PortfolioAction = PortfolioDeletePicture | PortfolioFetchPicturesLoadingAction | PortfolioFetchPicturesSuccessAction | PortfolioFetchPicturesFailureAction;
+export type PortfolioAction = PortfolioDeletePictureAction | PortfolioFetchPicturesLoadingAction | PortfolioFetchPicturesSuccessAction | PortfolioFetchPicturesFailureAction;

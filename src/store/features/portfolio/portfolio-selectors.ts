@@ -2,3 +2,5 @@
 import { RootState } from '../../redux-types';
 
 export const selectPortfolioPictures = (state: RootState) => state.portfolio.pictures;
+export const selectPortfolioPicturesLoading = (state: RootState) => state.portfolio.loading;
+export const selectPortfolioError = (state: RootState) => state.portfolio.error;
