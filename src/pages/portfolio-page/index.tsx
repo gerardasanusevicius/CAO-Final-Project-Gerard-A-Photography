@@ -8,14 +8,15 @@ import ClearIcon from '@mui/icons-material/Clear';
 import PictureContainer from './picture-container';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import {
-  selectPortfolioPictures, selectPortfolioPicturesLoading, selectPortfolioError,
+  selectPortfolioPictures, selectPortfolioPicturesLoading,
 } from '../../store/selectors';
 import { portfolioDeletePictureAction, portfolioFetchPicturesAction } from '../../store/action-creators';
+import { selectUser } from '../../store/features/auth/auth-selectors';
 
 const PortfolioPage: React.FC = () => {
   const pictures = useRootSelector(selectPortfolioPictures);
   const itemsLoading = useRootSelector(selectPortfolioPicturesLoading);
-  const error = useRootSelector(selectPortfolioError);
+  const adminLoggedIn = useRootSelector(selectUser);
   const dispatch = useRootDispatch();
 
   useEffect(() => {
@@ -24,11 +25,16 @@ const PortfolioPage: React.FC = () => {
 
   let pageContent = (
     <Box>
-      <CircularProgress sx={{ color: 'primary.dark' }} size={60} />
+      <CircularProgress
+        sx={{
+          color: 'primary.dark', ml: '45%', mt: '10%',
+        }}
+        size={60}
+      />
     </Box>
   );
 
-  if (!itemsLoading) {
+  if (!itemsLoading && adminLoggedIn) {
     pageContent = (
       <PictureContainer>
         {
@@ -58,6 +64,31 @@ const PortfolioPage: React.FC = () => {
         >
           <ClearIcon />
         </Button>
+      </Box>
+    ))
+  }
+      </PictureContainer>
+
+    );
+  } else if (!itemsLoading) {
+    pageContent = (
+      <PictureContainer>
+        {
+    pictures.map(({ id, ...picture }) => (
+      <Box
+        key={id}
+        sx={{
+          width: '300px',
+          height: '300px',
+          position: 'relative',
+        }}
+      >
+        <img
+          src={picture.src}
+          alt={picture.title}
+          width="300px"
+          height="300px"
+        />
       </Box>
     ))
   }
