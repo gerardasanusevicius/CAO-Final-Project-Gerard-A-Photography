@@ -3,11 +3,10 @@ import {
   Box, Button, CircularProgress,
 } from '@mui/material';
 
-import { useDispatch } from 'react-redux';
 import ClearIcon from '@mui/icons-material/Clear';
 
 import PictureContainer from './picture-container';
-import { useRootSelector } from '../../store/hooks';
+import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import {
   selectPortfolioPictures, selectPortfolioPicturesLoading, selectPortfolioError,
 } from '../../store/selectors';
@@ -17,7 +16,7 @@ const PortfolioPage: React.FC = () => {
   const pictures = useRootSelector(selectPortfolioPictures);
   const itemsLoading = useRootSelector(selectPortfolioPicturesLoading);
   const error = useRootSelector(selectPortfolioError);
-  const dispatch = useDispatch();
+  const dispatch = useRootDispatch();
 
   useEffect(() => {
     dispatch(portfolioFetchPicturesAction);
@@ -36,11 +35,9 @@ const PortfolioPage: React.FC = () => {
     pictures.map(({ id, ...picture }) => (
       <Box
         key={id}
-        component="img"
         sx={{
           width: '300px',
           height: '300px',
-          margin: '30px',
           position: 'relative',
         }}
       >
@@ -57,7 +54,7 @@ const PortfolioPage: React.FC = () => {
             top: '0px',
             right: '0px',
           }}
-          onClick={() => dispatch(portfolioDeletePictureAction)}
+          onClick={() => dispatch(portfolioDeletePictureAction(id))}
         >
           <ClearIcon />
         </Button>

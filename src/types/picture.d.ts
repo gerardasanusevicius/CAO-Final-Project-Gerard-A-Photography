@@ -1,5 +1,5 @@
 type Picture = {
-  id: string,
+  id: number,
   title: string,
   src: string,
 };

@@ -7,7 +7,7 @@ const fetchPictures = async (): Promise<Picture[]> => {
   return data;
 };
 
-const fetchPictureById = async (id: string): Promise<Picture> => {
+const fetchPictureById = async (id: number): Promise<Picture> => {
   try {
     const { data } = await ApiService.get<Picture>(`/pictures/${id}`);
     return data;
@@ -16,12 +16,9 @@ const fetchPictureById = async (id: string): Promise<Picture> => {
   }
 };
 
-const fetchPicturesByIds = async (ids: string[]): Promise<Picture[]> => Promise.all(ids.map(fetchPictureById));
-
 const PortfolioService = {
   fetchPictures,
   fetchPictureById,
-  fetchPicturesByIds,
 };
 
 export default PortfolioService;

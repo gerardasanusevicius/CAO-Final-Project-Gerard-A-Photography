@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import { Dispatch } from 'react';
-import PortfolioService from '../../../services/portfolio-service';
+import PortfolioService from '../../../services/portfolio-api-service';
 import { Picture } from '../../../types';
-import { AppAction, RootState } from '../../redux-types';
+import { AppAction } from '../../redux-types';
 import {
   PortfolioDeletePictureAction,
   PortfolioActionType,
@@ -30,7 +30,7 @@ export const portfolioDeletePictureAction = (id: number): PortfolioDeletePicture
   payload: { id },
 });
 
-export const portfolioFetchPicturesAction = async (dispatch: Dispatch<AppAction>, getState: () => RootState): Promise<void> => {
+export const portfolioFetchPicturesAction = async (dispatch: Dispatch<AppAction>): Promise<void> => {
   dispatch(portfolioFetchPicturesLoadingAction);
   try {
     const portfolioPictures = await PortfolioService.fetchPictures();
