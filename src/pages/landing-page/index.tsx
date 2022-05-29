@@ -11,11 +11,14 @@ const LandingPage: React.FC = () => (
       sx={(theme) => ({
         textTransform: 'uppercase',
         position: 'absolute',
-        left: '820px',
+        right: '3vw',
         color: theme.palette.primary.dark,
       })}
+
     >
-      Gerard A. Photography
+      Gerard A.
+      <br />
+      Photography
 
     </Typography>
     <Button
@@ -25,9 +28,9 @@ const LandingPage: React.FC = () => (
         color: theme.palette.primary.light,
         overflow: 'hidden',
         position: 'absolute',
-        bottom: '55px',
-        right: '155px',
-        fontSize: '24px',
+        bottom: '7.5%',
+        right: '3.25vw',
+        fontSize: '1.5rem',
         border: `1.5px solid ${theme.palette.primary.light}`,
         borderRadius: '0px',
         transition: '0.5s',
@@ -40,7 +43,7 @@ const LandingPage: React.FC = () => (
       Explore
 
     </Button>
-    <SocialIcons position="absolute" left="1320px" top="28px" color="primary.light" />
+    <SocialIcons position="absolute" right="1.5vw" top="28px" color="primary.light" />
   </Background>
 );
 

@@ -25,7 +25,7 @@ const createPortfolioFetchPicturesFailureAction = (error: string): PortfolioFetc
   payload: { error },
 });
 
-export const portfolioDeletePictureAction = (id: number): PortfolioDeletePictureAction => ({
+export const createPortfolioDeletePictureAction = (id: number): PortfolioDeletePictureAction => ({
   type: PortfolioActionType.PORTFOLIO_DELETE_PICTURE,
   payload: { id },
 });
@@ -43,3 +43,13 @@ export const portfolioFetchPicturesAction = async (dispatch: Dispatch<AppAction>
     dispatch(portfolioFetchPicturesFailureAction);
   }
 };
+
+// export const portfolioDeletePictureAction = async (dispatch: Dispatch<AppAction>): Promise<void> => {
+//   try {
+//     await PortfolioService.deletePictureById;
+//     dispatch(createPortfolioDeletePictureAction);
+//   } catch (error) {
+//     const errMsg = error instanceof Error ? error.message : String(error);
+//     throw Error(errMsg);
+//   }
+// };

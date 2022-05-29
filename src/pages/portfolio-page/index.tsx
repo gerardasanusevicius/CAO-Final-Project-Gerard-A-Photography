@@ -10,7 +10,7 @@ import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import {
   selectPortfolioPictures, selectPortfolioPicturesLoading,
 } from '../../store/selectors';
-import { portfolioDeletePictureAction, portfolioFetchPicturesAction } from '../../store/action-creators';
+import { createPortfolioDeletePictureAction, portfolioFetchPicturesAction } from '../../store/action-creators';
 import { selectUser } from '../../store/features/auth/auth-selectors';
 
 const PortfolioPage: React.FC = () => {
@@ -60,7 +60,7 @@ const PortfolioPage: React.FC = () => {
             top: '0px',
             right: '0px',
           }}
-          onClick={() => dispatch(portfolioDeletePictureAction(id))}
+          onClick={() => dispatch(createPortfolioDeletePictureAction(id))}
         >
           <ClearIcon />
         </Button>

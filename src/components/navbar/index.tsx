@@ -20,7 +20,7 @@ const Navbar: React.FC = () => (
     <Toolbar
       sx={{
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: { xs: 'space-around', lg: 'space-between' },
         mr: '-25px',
       }}
     >

@@ -19,3 +19,13 @@
 - npm start - launches the development server
 - npm build - compiles the app
 - npm run server - launches the demo server
+
+## Hidden pages
+
+- /login - access admin login form
+- /admin - access picture upload form
+
+## Temporary login credentials
+
+- username: gerardasanusevicius
+- password: laikinasslaptazodis

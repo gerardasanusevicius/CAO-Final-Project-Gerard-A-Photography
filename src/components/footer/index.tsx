@@ -13,7 +13,9 @@ const Footer: React.FC = () => (
       boxShadow: 'none',
       maxWidth: '100%',
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: {
+        xs: 'center', md: 'space-between',
+      },
       height: barHeight,
       display: 'flex',
       alignItems: 'center',
@@ -27,7 +29,12 @@ const Footer: React.FC = () => (
       },
     }}
   >
-    <Paragraph>
+    <Paragraph sx={{
+      display: {
+        xs: 'none', md: 'block',
+      },
+    }}
+    >
       Content of this webpage belongs to Gerardas Anusevicius.
       <br />
       Any illegal distribution may lead to legal prosecution
