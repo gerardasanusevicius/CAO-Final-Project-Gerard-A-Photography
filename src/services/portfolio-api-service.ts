@@ -16,18 +16,19 @@ const fetchPictureById = async (id: number): Promise<Picture> => {
   }
 };
 
-// const deletePictureById = async (id: number): Promise<Picture> => {
-//   try {
-//     const { data } = await ApiService.delete<Picture>(`/pictures/${id}`);
-//     return data;
-//   } catch (error) {
-//     throw new Error((error as AxiosError).message);
-//   }
-// };
+const deletePictureById = async (id: number): Promise<Picture> => {
+  try {
+    const { data } = await ApiService.delete<Picture>(`/pictures/${id}`);
+    return data;
+  } catch (error) {
+    throw new Error((error as AxiosError).message);
+  }
+};
 
 const PortfolioService = {
   fetchPictures,
   fetchPictureById,
+  deletePictureById,
 };
 
 export default PortfolioService;
