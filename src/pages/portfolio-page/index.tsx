@@ -10,7 +10,7 @@ import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import {
   selectPortfolioPictures, selectPortfolioPicturesLoading,
 } from '../../store/selectors';
-import { createPortfolioDeletePictureThunkAction, portfolioFetchPicturesAction } from '../../store/action-creators';
+import { createPortfolioDeletePictureThunkAction, portfolioFetchPicturesThunkAction } from '../../store/action-creators';
 import { selectUser } from '../../store/features/auth/auth-selectors';
 
 const PortfolioPage: React.FC = () => {
@@ -20,7 +20,7 @@ const PortfolioPage: React.FC = () => {
   const dispatch = useRootDispatch();
 
   useEffect(() => {
-    dispatch(portfolioFetchPicturesAction);
+    dispatch(portfolioFetchPicturesThunkAction);
   }, []);
 
   let pageContent = (

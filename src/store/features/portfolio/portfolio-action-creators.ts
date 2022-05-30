@@ -30,7 +30,7 @@ const createPortfolioDeletePictureAction = (id: number): PortfolioDeletePictureA
   payload: { id },
 });
 
-export const portfolioFetchPicturesAction = async (dispatch: Dispatch<AppAction>): Promise<void> => {
+export const portfolioFetchPicturesThunkAction = async (dispatch: Dispatch<AppAction>): Promise<void> => {
   dispatch(portfolioFetchPicturesLoadingAction);
   try {
     const portfolioPictures = await PortfolioService.fetchPictures();
