@@ -15,11 +15,12 @@ import ProjectsPage from './pages/projects-page';
 import LoginPage from './pages/login-page';
 import AdminPage from './pages/admin-page/admin-page';
 
-import MainLayout from './components/main-layout';
+import MainLayout from './components/layouts/main-layout';
 import RequireAuth from './routing/require-auth';
 import RequireVisitor from './routing/require-visitor';
 
 import store from './store';
+import AdminLayout from './components/layouts/admin-layout';
 
 const App: React.FC = () => (
   <BrowserRouter>
@@ -32,22 +33,24 @@ const App: React.FC = () => (
           <Route path="about" element={<AboutPage />} />
           <Route path="contacts" element={<ContactPage />} />
         </Route>
-        <Route
-          path="login"
-          element={(
-            <RequireVisitor>
-              <LoginPage />
-            </RequireVisitor>
+        <Route element={<AdminLayout />}>
+          <Route
+            path="login"
+            element={(
+              <RequireVisitor>
+                <LoginPage />
+              </RequireVisitor>
         )}
-        />
-        <Route
-          path="/admin"
-          element={(
-            <RequireAuth>
-              <AdminPage />
-            </RequireAuth>
+          />
+          <Route
+            path="/admin"
+            element={(
+              <RequireAuth>
+                <AdminPage />
+              </RequireAuth>
         )}
-        />
+          />
+        </Route>
       </Routes>
     </ReduxProvider>
   </BrowserRouter>

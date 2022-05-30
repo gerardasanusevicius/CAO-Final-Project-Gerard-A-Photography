@@ -1,4 +1,6 @@
-import { Button, Container, TextField } from '@mui/material';
+import {
+  Box, Button, Container, TextField,
+} from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -30,31 +32,37 @@ const UploadForm: React.FC = () => {
 
   return (
     <Container sx={{
-      marginTop: '100px', width: '250px', display: 'flex', flexDirection: 'column',
+      marginTop: '100px',
+      width: '250px',
+      display: 'flex',
+      flexDirection: 'column',
+
     }}
     >
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <TextField
-          id="title"
-          label="Title"
-          name="title"
-          type="text"
-          sx={{ marginBottom: '25px' }}
-          required
-          onChange={(e) => setTitle(e.target.value)}
-          error={titleError}
-        />
-        <TextField
-          id="url"
-          label="Url"
-          name="url"
-          type="url"
-          sx={{ marginBottom: '25px' }}
-          required
-          onChange={(e) => setSrc(e.target.value)}
-          error={srcError}
-        />
-        <Button type="submit">Upload</Button>
+        <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+          <TextField
+            id="title"
+            label="Title"
+            name="title"
+            type="text"
+            sx={{ marginBottom: '25px' }}
+            required
+            onChange={(e) => setTitle(e.target.value)}
+            error={titleError}
+          />
+          <TextField
+            id="url"
+            label="Url"
+            name="url"
+            type="url"
+            sx={{ marginBottom: '25px' }}
+            required
+            onChange={(e) => setSrc(e.target.value)}
+            error={srcError}
+          />
+          <Button type="submit">Upload</Button>
+        </Box>
       </form>
     </Container>
   );
