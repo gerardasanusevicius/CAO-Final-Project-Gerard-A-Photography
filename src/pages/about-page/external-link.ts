@@ -17,6 +17,7 @@ const ExternalLink = styled(Button)(({ theme }) => ({
 
   ':hover': {
     color: theme.palette.primary.dark,
+    background: 'none',
   },
 }));
 
