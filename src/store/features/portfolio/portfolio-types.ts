@@ -16,7 +16,7 @@ export enum PortfolioActionType {
 export type PortfolioDeletePictureAction = {
   type: PortfolioActionType.PORTFOLIO_DELETE_PICTURE
   payload: {
-    id: number,
+    id: string,
   },
 };
 

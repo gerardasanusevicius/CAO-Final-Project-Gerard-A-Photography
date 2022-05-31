@@ -7,7 +7,7 @@ const fetchPictures = async (): Promise<Picture[]> => {
   return data;
 };
 
-const fetchPictureById = async (id: number): Promise<Picture> => {
+const fetchPictureById = async (id: string): Promise<Picture> => {
   try {
     const { data } = await ApiService.get<Picture>(`/pictures/${id}`);
     return data;
@@ -16,7 +16,7 @@ const fetchPictureById = async (id: number): Promise<Picture> => {
   }
 };
 
-const deletePictureById = async (id: number): Promise<Picture> => {
+const deletePictureById = async (id: string): Promise<Picture> => {
   try {
     const { data } = await ApiService.delete<Picture>(`/pictures/${id}`);
     return data;
