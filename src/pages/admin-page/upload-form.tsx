@@ -47,7 +47,12 @@ const UploadForm: React.FC = () => {
             label="Title"
             name="title"
             type="text"
-            sx={{ marginBottom: '25px' }}
+            sx={{
+              marginBottom: '25px',
+              '& fieldset': {
+                borderRadius: 0,
+              },
+            }}
             required
             onChange={(e) => setTitle(e.target.value)}
             error={titleError}
@@ -57,12 +62,17 @@ const UploadForm: React.FC = () => {
             label="Url"
             name="url"
             type="url"
-            sx={{ marginBottom: '25px' }}
+            sx={{
+              marginBottom: '25px',
+              '& fieldset': {
+                borderRadius: 0,
+              },
+            }}
             required
             onChange={(e) => setSrc(e.target.value)}
             error={srcError}
           />
-          <Button type="submit">Upload</Button>
+          <Button type="submit" sx={{ ':hover': { color: 'primary.dark' } }}>Upload</Button>
         </Box>
       </form>
     </Container>

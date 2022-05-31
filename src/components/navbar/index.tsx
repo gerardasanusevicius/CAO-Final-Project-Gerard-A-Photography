@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
           <NavbarLink to="/portfolio">Portfolio</NavbarLink>
           <NavbarLink to="/projects">Projects</NavbarLink>
           <NavbarLink to="/about">About</NavbarLink>
-          <NavbarLink to="/contacts">Contacts</NavbarLink>
+          <NavbarLink to="/contacts">Contact</NavbarLink>
           { adminLoggedIn
             ? <NavbarLink to="/admin">Admin</NavbarLink> : null}
         </Container>

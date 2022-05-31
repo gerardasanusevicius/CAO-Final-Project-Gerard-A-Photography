@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import SocialLink from '../social-link';
+import SocialLink from './social-link';
 
 type SocialIconsProps = {
   position?: string,
