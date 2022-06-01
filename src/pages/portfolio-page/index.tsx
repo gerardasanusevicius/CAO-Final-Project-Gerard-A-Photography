@@ -4,6 +4,8 @@ import {
 } from '@mui/material';
 
 import ClearIcon from '@mui/icons-material/Clear';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import PictureContainer from './picture-container';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
@@ -12,6 +14,7 @@ import {
 } from '../../store/selectors';
 import { createPortfolioDeletePictureThunkAction, portfolioFetchPicturesThunkAction } from '../../store/action-creators';
 import { selectUser } from '../../store/features/auth/auth-selectors';
+import PictureBox from './picture-box';
 
 const PortfolioPage: React.FC = () => {
   const pictures = useRootSelector(selectPortfolioPictures);
@@ -33,6 +36,44 @@ const PortfolioPage: React.FC = () => {
       />
     </Box>
   );
+
+  // const extraProps = (
+  //   <>
+  //     <Button
+  //       variant="text"
+  //       sx={{
+  //         position: 'absolute',
+  //         top: '0px',
+  //         right: '0px',
+  //       }}
+  //       onClick={() => dispatch(createPortfolioDeletePictureThunkAction(id))}
+  //     >
+  //       <ClearIcon />
+  //     </Button>
+  // <Button
+  //   variant="text"
+  //   sx={{
+  //     position: 'absolute',
+  //     top: '125px',
+  //     left: '0px',
+  //   }}
+  //   onClick={() => alert('feature coming soon')}
+  // >
+  //   <ArrowBackIosNewIcon />
+  // </Button>
+  // <Button
+  //   variant="text"
+  //   sx={{
+  //     position: 'absolute',
+  //     top: '125px',
+  //     right: '0px',
+  //   }}
+  //   onClick={() => alert('feature coming soon')}
+  // >
+  //   <ArrowForwardIosIcon />
+  // </Button>
+  //   </>
+  // );
 
   if (!itemsLoading && adminLoggedIn) {
     pageContent = (
@@ -64,9 +105,31 @@ const PortfolioPage: React.FC = () => {
         >
           <ClearIcon />
         </Button>
+        <Button
+          variant="text"
+          sx={{
+            position: 'absolute',
+            top: '125px',
+            left: '0px',
+          }}
+          onClick={() => alert('feature coming soon')}
+        >
+          <ArrowBackIosNewIcon />
+        </Button>
+        <Button
+          variant="text"
+          sx={{
+            position: 'absolute',
+            top: '125px',
+            right: '0px',
+          }}
+          onClick={() => alert('feature coming soon')}
+        >
+          <ArrowForwardIosIcon />
+        </Button>
       </Box>
     ))
-  }
+}
       </PictureContainer>
 
     );
@@ -75,21 +138,7 @@ const PortfolioPage: React.FC = () => {
       <PictureContainer>
         {
     pictures.map(({ id, ...picture }) => (
-      <Box
-        key={id}
-        sx={{
-          width: '300px',
-          height: '300px',
-          position: 'relative',
-        }}
-      >
-        <img
-          src={picture.src}
-          alt={picture.title}
-          width="300px"
-          height="300px"
-        />
-      </Box>
+      <PictureBox id={id} title={picture.title} src={picture.src} />
     ))
   }
       </PictureContainer>
