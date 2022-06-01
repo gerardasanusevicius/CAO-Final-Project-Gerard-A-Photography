@@ -1,9 +1,10 @@
 import {
-  Box, Button, Container, TextField,
+  Box, Container, TextField,
 } from '@mui/material';
 
 import axios from 'axios';
 import React, { useState } from 'react';
+import CustomButton from '../../components/custom-button/custom-button';
 
 const UploadForm: React.FC = () => {
   const [title, setTitle] = useState('');
@@ -68,7 +69,7 @@ const UploadForm: React.FC = () => {
             onChange={(e) => setSrc(e.target.value)}
             error={srcError}
           />
-          <Button type="submit" sx={{ ':hover': { color: 'primary.dark', background: 'none' } }}>Upload</Button>
+          <CustomButton btnLabel="Upload" type="submit" />
         </Box>
       </form>
     </Container>

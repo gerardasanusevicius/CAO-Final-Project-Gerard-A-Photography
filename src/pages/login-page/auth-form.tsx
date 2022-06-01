@@ -58,7 +58,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
       )}
       <Paper
         component="form"
-        elevation={1}
+        elevation={0}
         sx={{
           display: 'flex',
           mx: 'auto',
@@ -68,6 +68,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
           p: 3,
           width: contentWidth,
           borderRadius: 0,
+          bgcolor: 'primary.light',
         }}
         onSubmit={onSubmit}
       >
@@ -88,13 +89,13 @@ const AuthForm: React.FC<AuthFormProps> = ({
           {children}
         </Box>
         <Button
-          variant="outlined"
-          size="large"
+          variant="text"
           type="submit"
           disabled={!btnActive || loading}
           sx={{
             borderRadius: 0,
             color: 'primary.main',
+            ':hover': { color: 'primary.dark', background: 'none' },
           }}
         >
           {loading ? <CircularProgress size={15} /> : submitText }

@@ -78,6 +78,12 @@ const LoginPage: React.FC = () => {
         error={touched.username && Boolean(errors.username)}
         helperText={touched.username && errors.username}
         disabled={loading}
+        required
+        sx={{
+          '& fieldset': {
+            borderRadius: 0,
+          },
+        }}
       />
       <TextField
         type={showHidePassword ? 'text' : 'password'}
@@ -90,6 +96,12 @@ const LoginPage: React.FC = () => {
         error={touched.password && Boolean(errors.password)}
         helperText={touched.password && errors.password}
         disabled={loading}
+        required
+        sx={{
+          '& fieldset': {
+            borderRadius: 0,
+          },
+        }}
         InputProps={{
           endAdornment:
   <InputAdornment position="end">

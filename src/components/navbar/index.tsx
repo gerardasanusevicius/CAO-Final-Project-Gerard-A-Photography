@@ -4,13 +4,13 @@ import {
   Container,
   Toolbar,
   Box,
-  Button,
 } from '@mui/material';
 import NavbarLink from './navbar-link';
 import { useRootSelector } from '../../store';
 import { selectUser } from '../../store/selectors';
 import { useRootDispatch } from '../../store/hooks';
 import { authLogoutAction } from '../../store/action-creators';
+import CustomButton from '../custom-button/custom-button';
 
 const Navbar: React.FC = () => {
   const adminLoggedIn = useRootSelector(selectUser);
@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
             ? <NavbarLink to="/admin">Admin</NavbarLink> : null}
         </Container>
         { adminLoggedIn
-          ? <Button onClick={logout} sx={{ ':hover': { color: 'primary.dark', background: 'none' } }}>Logout</Button> : null}
+          ? <CustomButton onClick={logout} btnLabel="Logout" /> : null}
         <NavbarLink to="/">
           <Box
             component="img"

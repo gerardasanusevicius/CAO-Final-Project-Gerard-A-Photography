@@ -1,8 +1,9 @@
 import {
-  Box, Button, Container, TextField,
+  Box, Container, TextField,
 } from '@mui/material';
 
 import React, { useState } from 'react';
+import CustomButton from '../../components/custom-button/custom-button';
 
 const ContactForm: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -88,7 +89,7 @@ const ContactForm: React.FC = () => {
             onChange={(e) => setMessage(e.target.value)}
             error={messageError}
           />
-          <Button type="submit" sx={{ ':hover': { color: 'primary.dark', background: 'none' } }}>Send</Button>
+          <CustomButton btnLabel="Send" type="submit" />
         </Box>
       </form>
     </Container>
