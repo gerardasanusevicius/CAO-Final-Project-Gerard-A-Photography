@@ -4,21 +4,17 @@ import {
 
 import axios from 'axios';
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 const UploadForm: React.FC = () => {
   const [title, setTitle] = useState('');
   const [src, setSrc] = useState('');
   const [titleError, setTitleError] = useState(false);
   const [srcError, setSrcError] = useState(false);
-  const [uuid, setUuid] = useState('');
 
   const handleSubmit = (e : React.SyntheticEvent) => {
     e.preventDefault();
     setTitleError(false);
     setSrcError(false);
-    const uniqueId = uuidv4();
-    setUuid(uniqueId);
 
     if (title === '') {
       setTitleError(true);
@@ -27,7 +23,7 @@ const UploadForm: React.FC = () => {
       setSrcError(true);
     }
     if (title && src) {
-      axios.post('http://localhost:8000/pictures', { title, src, uuid });
+      axios.post('http://localhost:8000/pictures', { title, src });
     }
   };
 
@@ -72,7 +68,7 @@ const UploadForm: React.FC = () => {
             onChange={(e) => setSrc(e.target.value)}
             error={srcError}
           />
-          <Button type="submit" sx={{ ':hover': { color: 'primary.dark' } }}>Upload</Button>
+          <Button type="submit" sx={{ ':hover': { color: 'primary.dark', background: 'none' } }}>Upload</Button>
         </Box>
       </form>
     </Container>

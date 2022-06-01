@@ -2,6 +2,7 @@ import React from 'react';
 import { Divider } from '@mui/material';
 import Paragraph from '../../components/paragraph';
 import InfoContainer from '../../components/info-container';
+import ContactForm from './contact-form';
 
 const ContactPage: React.FC = () => (
   <InfoContainer>
@@ -24,6 +25,7 @@ const ContactPage: React.FC = () => (
       }}
       />
     </Paragraph>
+    <ContactForm />
   </InfoContainer>
 );
 
