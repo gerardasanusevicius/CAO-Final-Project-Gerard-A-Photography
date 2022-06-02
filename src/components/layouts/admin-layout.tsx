@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../navbar';
-import { pageTop } from '../../helpers/constants';
+import { pageTop } from '../../helpers/bar-constants';
 
 const AdminLayout: React.FC = () => (
   <>

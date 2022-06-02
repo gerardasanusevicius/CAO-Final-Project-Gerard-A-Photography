@@ -41,7 +41,7 @@ const PortfolioPage: React.FC = () => {
     pictures.map(({ id, ...picture }) => (
       <PictureBox key={id}>
         <img
-          src={picture.src}
+          src={picture.srcSmall}
           alt={picture.title}
           width="300px"
           height="300px"

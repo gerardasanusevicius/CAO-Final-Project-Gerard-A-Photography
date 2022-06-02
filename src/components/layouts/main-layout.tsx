@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../navbar';
 import Footer from '../footer';
-import { pageBottom, pageTop } from '../../helpers/constants';
+import { pageBottom, pageTop } from '../../helpers/bar-constants';
 
 const MainLayout: React.FC = () => (
   <>

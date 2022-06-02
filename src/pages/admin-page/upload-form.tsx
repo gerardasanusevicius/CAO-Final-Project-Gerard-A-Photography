@@ -8,23 +8,29 @@ import CustomButton from '../../components/custom-button/custom-button';
 
 const UploadForm: React.FC = () => {
   const [title, setTitle] = useState('');
-  const [src, setSrc] = useState('');
+  const [srcSmall, setSrcSmall] = useState('');
+  const [srcLarge, setSrcLarge] = useState('');
   const [titleError, setTitleError] = useState(false);
-  const [srcError, setSrcError] = useState(false);
+  const [srcSmallError, setSrcSmallError] = useState(false);
+  const [srcLargeError, setSrcLargeError] = useState(false);
 
   const handleSubmit = (e : React.SyntheticEvent) => {
     e.preventDefault();
     setTitleError(false);
-    setSrcError(false);
+    setSrcSmallError(false);
+    setSrcLargeError(false);
 
     if (title === '') {
       setTitleError(true);
     }
-    if (src === '') {
-      setSrcError(true);
+    if (srcSmall === '') {
+      setSrcSmallError(true);
     }
-    if (title && src) {
-      axios.post('http://localhost:8000/pictures', { title, src });
+    if (srcLarge === '') {
+      setSrcLargeError(true);
+    }
+    if (title && srcSmall && srcLarge) {
+      axios.post('http://localhost:8000/pictures', { title, srcSmall, srcLarge });
     }
   };
 
@@ -56,7 +62,7 @@ const UploadForm: React.FC = () => {
           />
           <TextField
             id="url"
-            label="Url"
+            label="Small size url "
             name="url"
             type="url"
             sx={{
@@ -66,8 +72,23 @@ const UploadForm: React.FC = () => {
               },
             }}
             required
-            onChange={(e) => setSrc(e.target.value)}
-            error={srcError}
+            onChange={(e) => setSrcSmall(e.target.value)}
+            error={srcSmallError}
+          />
+          <TextField
+            id="url"
+            label="Large size url"
+            name="url"
+            type="url"
+            sx={{
+              marginBottom: '25px',
+              '& fieldset': {
+                borderRadius: 0,
+              },
+            }}
+            required
+            onChange={(e) => setSrcLarge(e.target.value)}
+            error={srcLargeError}
           />
           <CustomButton btnLabel="Upload" type="submit" />
         </Box>
