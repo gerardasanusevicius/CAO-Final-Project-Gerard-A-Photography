@@ -4,6 +4,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
 } from 'react-router-dom';
 import './app.css';
 
@@ -51,6 +52,7 @@ const App: React.FC = () => (
         )}
           />
         </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </ReduxProvider>
   </BrowserRouter>
