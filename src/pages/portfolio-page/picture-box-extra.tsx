@@ -21,6 +21,9 @@ const PictureBoxExtra: React.FC<PictureBoxExtraProps> = ({ id }) => {
           position: 'absolute',
           top: '0px',
           right: '0px',
+          ':hover': {
+            color: 'primary.light',
+          },
         }}
         onClick={() => dispatch(createPortfolioDeletePictureThunkAction(id))}
       >
@@ -32,6 +35,9 @@ const PictureBoxExtra: React.FC<PictureBoxExtraProps> = ({ id }) => {
           position: 'absolute',
           top: '125px',
           left: '0px',
+          ':hover': {
+            color: 'primary.light',
+          },
         }}
         onClick={() => alert('feature coming soon')}
       >
@@ -43,6 +49,9 @@ const PictureBoxExtra: React.FC<PictureBoxExtraProps> = ({ id }) => {
           position: 'absolute',
           top: '125px',
           right: '0px',
+          ':hover': {
+            color: 'primary.light',
+          },
         }}
         onClick={() => alert('feature coming soon')}
       >
