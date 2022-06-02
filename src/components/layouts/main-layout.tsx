@@ -2,7 +2,8 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../navbar';
-import Footer, { barHeight } from '../footer';
+import Footer from '../footer';
+import { pageBottom, pageTop } from '../../helpers/constants';
 
 const MainLayout: React.FC = () => (
   <>
@@ -10,8 +11,8 @@ const MainLayout: React.FC = () => (
     <Box
       component="main"
       sx={{
-        mt: '137.5px',
-        mb: barHeight,
+        mt: pageTop,
+        mb: pageBottom,
       }}
     >
       <Outlet />

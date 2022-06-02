@@ -2,8 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import Paragraph from '../paragraph';
 import SocialIcons from '../social-icons';
-
-export const barHeight = '65px';
+import { pageBottom } from '../../helpers/constants';
 
 const Footer: React.FC = () => (
   <Box
@@ -16,7 +15,7 @@ const Footer: React.FC = () => (
       justifyContent: {
         xs: 'center', md: 'space-between',
       },
-      height: barHeight,
+      height: pageBottom,
       display: 'flex',
       alignItems: 'center',
       padding: '0px 62.5px 0px 80px',
