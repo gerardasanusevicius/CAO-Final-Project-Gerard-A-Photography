@@ -22,6 +22,7 @@ import RequireVisitor from './routing/require-visitor';
 
 import store from './store';
 import AdminLayout from './components/layouts/admin-layout';
+import PicturePage from './pages/picture-page';
 
 const App: React.FC = () => (
   <BrowserRouter>
@@ -30,6 +31,7 @@ const App: React.FC = () => (
         <Route path="/" element={<LandingPage />} />
         <Route element={<MainLayout />}>
           <Route path="portfolio" element={<PortfolioPage />} />
+          <Route path="portfolio/:id" element={<PicturePage />} />
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contacts" element={<ContactPage />} />

@@ -3,6 +3,7 @@ import {
   Box, CircularProgress,
 } from '@mui/material';
 
+import { useNavigate } from 'react-router-dom';
 import PictureContainer from './picture-container';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import {
@@ -18,6 +19,7 @@ const PortfolioPage: React.FC = () => {
   const itemsLoading = useRootSelector(selectPortfolioPicturesLoading);
   const adminLoggedIn = useRootSelector(selectUser);
   const dispatch = useRootDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(portfolioFetchPicturesThunkAction);
@@ -39,7 +41,7 @@ const PortfolioPage: React.FC = () => {
       <PictureContainer>
         {
     pictures.map(({ id, ...picture }) => (
-      <PictureBox key={id}>
+      <PictureBox key={id} onClick={() => navigate(`/portfolio/${id}`)}>
         <img
           src={picture.srcSmall}
           alt={picture.title}

@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
         <NavbarLink to="/">
           <Box
             component="img"
-            src="./logo.png"
+            src="https://i.postimg.cc/ry4S1T1Z/gerard-a-logo.png"
             sx={{
               width: '275px',
             }}
