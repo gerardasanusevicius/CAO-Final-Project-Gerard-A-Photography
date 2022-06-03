@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import Paragraph from '../paragraph';
 import SocialIcons from '../social-icons';
-import { pageBottom } from '../../helpers/bar-constants';
+import { pageBottom } from '../../helpers/structure-constants';
 
 const Footer: React.FC = () => (
   <Box

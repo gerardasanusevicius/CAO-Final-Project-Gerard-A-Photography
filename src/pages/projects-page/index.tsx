@@ -3,7 +3,7 @@ import InfoContainer from '../../components/info-container';
 
 const ProjectsPage: React.FC = () => (
   <InfoContainer>
-    <div>ProjectsPage</div>
+    <div>Coming soon...</div>
   </InfoContainer>
 );
 

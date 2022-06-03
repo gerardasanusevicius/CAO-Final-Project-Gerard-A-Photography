@@ -6,8 +6,6 @@ const InfoContainer = styled(Box)({
   flexWrap: 'wrap',
   justifyContent: 'space-between',
   gap: '45px',
-  padding: '30px 80px',
-  margin: '0px',
 });
 
 export default InfoContainer;

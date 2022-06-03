@@ -1,6 +1,6 @@
 import { styled, Box } from '@mui/material';
 
-const PictureBox = styled(Box)({
+const SmallPicture = styled(Box)({
   width: '300px',
   height: '300px',
   position: 'relative',
@@ -10,4 +10,4 @@ const PictureBox = styled(Box)({
   },
 });
 
-export default PictureBox;
+export default SmallPicture;

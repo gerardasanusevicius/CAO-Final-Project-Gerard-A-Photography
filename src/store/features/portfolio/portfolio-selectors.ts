@@ -3,4 +3,3 @@ import { RootState } from '../../redux-types';
 
 export const selectPortfolioPictures = (state: RootState) => state.portfolio.pictures;
 export const selectPortfolioPicturesLoading = (state: RootState) => state.portfolio.loading;
-export const selectPortfolioPictureById = (pictureId: string) => (state: RootState) => state.portfolio.pictures.find((picture) => picture.id === pictureId);

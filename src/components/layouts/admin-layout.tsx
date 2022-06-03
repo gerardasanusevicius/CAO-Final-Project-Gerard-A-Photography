@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../navbar';
-import { pageTop } from '../../helpers/bar-constants';
+import { pageSide, pageTop } from '../../helpers/structure-constants';
 
 const AdminLayout: React.FC = () => (
   <>
@@ -11,6 +11,8 @@ const AdminLayout: React.FC = () => (
       component="main"
       sx={{
         mt: pageTop,
+        ml: pageSide,
+        mr: pageSide,
       }}
     >
       <Outlet />

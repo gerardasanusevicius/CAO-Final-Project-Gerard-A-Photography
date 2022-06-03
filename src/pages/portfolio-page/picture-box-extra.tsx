@@ -6,11 +6,11 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { createPortfolioDeletePictureThunkAction } from '../../store/action-creators';
 import { useRootDispatch } from '../../store/hooks';
 
-type PictureBoxExtraProps = {
+type SmallPictureExtraProps = {
   id: string,
 };
 
-const PictureBoxExtra: React.FC<PictureBoxExtraProps> = ({ id }) => {
+const SmallPictureExtra: React.FC<SmallPictureExtraProps> = ({ id }) => {
   const dispatch = useRootDispatch();
 
   return (
@@ -61,4 +61,4 @@ const PictureBoxExtra: React.FC<PictureBoxExtraProps> = ({ id }) => {
   );
 };
 
-export default PictureBoxExtra;
+export default SmallPictureExtra;

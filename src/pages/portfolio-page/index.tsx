@@ -4,19 +4,19 @@ import {
 } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
-import PictureContainer from './picture-container';
+import PictureContainer from '../../components/picture-container/picture-container';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import {
   selectPortfolioPictures, selectPortfolioPicturesLoading,
 } from '../../store/selectors';
 import { portfolioFetchPicturesThunkAction } from '../../store/action-creators';
 import { selectUser } from '../../store/features/auth/auth-selectors';
-import PictureBox from './picture-box';
-import PictureBoxExtra from './picture-box-extra';
+import SmallPicture from './small-picture';
+import SmallPictureExtra from './picture-box-extra';
 
 const PortfolioPage: React.FC = () => {
   const pictures = useRootSelector(selectPortfolioPictures);
-  const itemsLoading = useRootSelector(selectPortfolioPicturesLoading);
+  const picturesLoading = useRootSelector(selectPortfolioPicturesLoading);
   const adminLoggedIn = useRootSelector(selectUser);
   const dispatch = useRootDispatch();
   const navigate = useNavigate();
@@ -36,12 +36,12 @@ const PortfolioPage: React.FC = () => {
     </Box>
   );
 
-  if (!itemsLoading) {
+  if (!picturesLoading) {
     pageContent = (
       <PictureContainer>
         {
     pictures.map(({ id, ...picture }) => (
-      <PictureBox key={id} onClick={() => navigate(`/portfolio/${id}`)}>
+      <SmallPicture key={id} onClick={() => navigate(`/portfolio/${id}`)}>
         <img
           src={picture.srcSmall}
           alt={picture.title}
@@ -50,9 +50,9 @@ const PortfolioPage: React.FC = () => {
         />
         {
           adminLoggedIn
-            ? <PictureBoxExtra id={id} /> : null
+            ? <SmallPictureExtra id={id} /> : null
   }
-      </PictureBox>
+      </SmallPicture>
     ))
 }
       </PictureContainer>
