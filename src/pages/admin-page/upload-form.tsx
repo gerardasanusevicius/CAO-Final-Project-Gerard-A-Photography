@@ -5,6 +5,8 @@ import {
 import axios from 'axios';
 import React, { useState } from 'react';
 import CustomButton from '../../components/custom-button/custom-button';
+import { useRootDispatch } from '../../store/hooks';
+import { authLogoutAction } from '../../store/features/auth/auth-action-creators';
 
 const UploadForm: React.FC = () => {
   const [title, setTitle] = useState('');
@@ -32,6 +34,12 @@ const UploadForm: React.FC = () => {
     if (title && srcSmall && srcLarge) {
       axios.post('http://localhost:8000/pictures', { title, srcSmall, srcLarge });
     }
+  };
+
+  const dispatch = useRootDispatch();
+
+  const logout = () => {
+    dispatch(authLogoutAction);
   };
 
   return (
@@ -93,6 +101,7 @@ const UploadForm: React.FC = () => {
           <CustomButton btnLabel="Upload" type="submit" />
         </Box>
       </form>
+      <CustomButton sx={{ display: { xxs: 'block', lg: 'none' }, mt: '3rem' }} onClick={logout} btnLabel="Logout" />
     </Container>
   );
 };

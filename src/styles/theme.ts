@@ -1,9 +1,8 @@
 import { createTheme } from '@mui/material';
 import omnesPro from './omnes-pro.otf';
+import { baseFontSize } from '../helpers/structure-constants';
 
-const theme = createTheme();
-
-const lightTheme = createTheme(theme, {
+const lightTheme = createTheme({
   palette: {
     primary: {
       main: '#a6a6a6',
@@ -23,7 +22,6 @@ const lightTheme = createTheme(theme, {
       fontSize: '5.5rem',
     },
   },
-
   components: {
     MuiCssBaseline: {
       styleOverrides: `
@@ -49,6 +47,17 @@ const lightTheme = createTheme(theme, {
           fontFamily: 'omnes-pro',
         },
       },
+    },
+  },
+  breakpoints: {
+    values: {
+      xxs: 0,
+      xs: 400,
+      sm: 600,
+      md: 800,
+      lg: 1065,
+      xl: 1536,
+      xxl: 1920,
     },
   },
 });

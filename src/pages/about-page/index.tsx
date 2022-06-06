@@ -7,61 +7,57 @@ import ExternalLink from './external-link';
 
 const AboutPage: React.FC = () => (
   <InfoContainer>
-    <Paragraph sx={{
-      width: '40rem',
+    <Box sx={{
+      width: { xs: '100%', lg: '36.25rem' },
       m: { xs: '0 auto', md: 0 },
     }}
     >
-
       <Divider sx={{
         marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
-
-      I am Gerardas Anusevicius - a photographer from Vilnius, Lithuania.
-
+      <Paragraph>
+        I am Gerardas Anusevicius - a photographer from Vilnius, Lithuania.
+      </Paragraph>
       <Divider sx={{
         marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
-
-      I create art in the form of:
-      <br />
-      fashion,
-      <br />
-      boudoir,
-      <br />
-      fine art,
-      <br />
-      backstage photography.
-
+      <Paragraph>
+        I create art in the form of:
+        <br />
+        fashion,
+        <br />
+        boudoir,
+        <br />
+        fine art,
+        <br />
+        backstage photography.
+      </Paragraph>
       <Divider sx={{
         marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
-
-      As a director I organised, photographed and wrote articles for:
-
+      <Paragraph>
+        As a director I organised, photographed and wrote articles for:
+      </Paragraph>
       <a href="https://www.swomag.com/average-is-the-new-black/" target="_blank" rel="noreferrer">
         <ExternalLink>Average is the new black</ExternalLink>
       </a>
       <a href="https://www.swomag.com/shapes-and-shadows/" target="_blank" rel="noreferrer">
         <ExternalLink>Shapes and Shadows</ExternalLink>
-
       </a>
-
       <Divider sx={{
         marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
-
-    </Paragraph>
+    </Box>
     <Box
       component="img"
       src={AboutPicture}
       alt="gerard_about_pic"
       sx={{
-        maxWidth: { xs: '100%', md: '40%' },
+        maxWidth: { xs: '100%', lg: '36%' },
         m: { xs: '0 auto', md: 0 },
       }}
     />

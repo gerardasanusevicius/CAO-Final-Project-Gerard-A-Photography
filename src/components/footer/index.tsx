@@ -31,7 +31,7 @@ const Footer: React.FC = () => (
   >
     <Paragraph sx={{
       display: {
-        xs: 'none', md: 'block',
+        xxs: 'none', md: 'block',
       },
     }}
     >

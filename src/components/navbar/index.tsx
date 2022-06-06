@@ -53,7 +53,18 @@ const Navbar: React.FC = () => {
             ? <NavbarLink to="/admin">Admin</NavbarLink> : null}
         </Container>
         { adminLoggedIn
-          ? <CustomButton onClick={logout} btnLabel="Logout" /> : null}
+          ? (
+            <CustomButton
+              sx={{
+                display: {
+                  xxs: 'none',
+                  lg: 'block',
+                },
+              }}
+              onClick={logout}
+              btnLabel="Logout"
+            />
+          ) : null}
         <NavbarLink
           to="/"
           sx={{
@@ -65,7 +76,7 @@ const Navbar: React.FC = () => {
             component="img"
             src="https://i.postimg.cc/ry4S1T1Z/gerard-a-logo.png"
             sx={{
-              width: '20rem',
+              maxWidth: '20rem',
               p: 0,
               m: 0,
               mr: '-3.5rem',
