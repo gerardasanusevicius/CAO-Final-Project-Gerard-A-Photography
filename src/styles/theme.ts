@@ -1,6 +1,5 @@
 import { createTheme } from '@mui/material';
 import omnesPro from './omnes-pro.otf';
-import { baseFontSize } from '../helpers/structure-constants';
 
 const lightTheme = createTheme({
   palette: {

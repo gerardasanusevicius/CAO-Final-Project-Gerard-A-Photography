@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
     >
       <Toolbar
         sx={{
-          justifyContent: 'space-between',
+          justifyContent: { xxs: 'space-around', md: 'space-between' },
           m: 0,
         }}
         disableGutters
@@ -77,9 +77,11 @@ const Navbar: React.FC = () => {
             src="https://i.postimg.cc/ry4S1T1Z/gerard-a-logo.png"
             sx={{
               maxWidth: '20rem',
+              width: { xxs: '15rem', md: '100%', lg: '20rem' },
+              height: 'auto',
               p: 0,
               m: 0,
-              mr: '-3.5rem',
+              transform: 'translateX(3.5rem)',
             }}
           />
 

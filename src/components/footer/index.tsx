@@ -27,6 +27,7 @@ const Footer: React.FC = () => (
       ':hover .sociallink': {
         color: 'primary.main',
       },
+      zIndex: 99,
     }}
   >
     <Paragraph sx={{

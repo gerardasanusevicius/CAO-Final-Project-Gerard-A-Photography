@@ -1,6 +1,5 @@
 import { Button, SxProps, Theme } from '@mui/material';
 import React from 'react';
-import { baseFontSize } from '../../helpers/structure-constants';
 
 type CustomButtonProps = {
   btnLabel: string;
