@@ -18,8 +18,9 @@ const lightTheme = createTheme(theme, {
     fontFamily: 'omnes-pro',
     h1: {
       '@media (max-width:1400px)': {
-        fontSize: '4.1rem',
+        fontSize: '4rem',
       },
+      fontSize: '5.5rem',
     },
   },
 

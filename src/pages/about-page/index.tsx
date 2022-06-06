@@ -8,7 +8,7 @@ import ExternalLink from './external-link';
 const AboutPage: React.FC = () => (
   <InfoContainer>
     <Paragraph sx={{
-      maxWidth: '40rem',
+      width: '40rem',
       m: { xs: '0 auto', md: 0 },
     }}
     >
@@ -61,8 +61,7 @@ const AboutPage: React.FC = () => (
       src={AboutPicture}
       alt="gerard_about_pic"
       sx={{
-        maxWidth: '40rem',
-        height: 'auto',
+        maxWidth: { xs: '100%', md: '40%' },
         m: { xs: '0 auto', md: 0 },
       }}
     />

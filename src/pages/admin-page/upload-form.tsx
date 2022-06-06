@@ -36,8 +36,8 @@ const UploadForm: React.FC = () => {
 
   return (
     <Container sx={{
-      marginTop: '100px',
-      width: '500px',
+      marginTop: '6.25rem',
+      width: '31.25rem',
       display: 'flex',
       flexDirection: 'column',
 
@@ -51,7 +51,7 @@ const UploadForm: React.FC = () => {
             name="title"
             type="text"
             sx={{
-              marginBottom: '25px',
+              marginBottom: '1.2rem',
               '& fieldset': {
                 borderRadius: 0,
               },
@@ -66,7 +66,7 @@ const UploadForm: React.FC = () => {
             name="url"
             type="url"
             sx={{
-              marginBottom: '25px',
+              marginBottom: '1.2rem',
               '& fieldset': {
                 borderRadius: 0,
               },
@@ -81,7 +81,7 @@ const UploadForm: React.FC = () => {
             name="url"
             type="url"
             sx={{
-              marginBottom: '25px',
+              marginBottom: '1.2rem',
               '& fieldset': {
                 borderRadius: 0,
               },

@@ -6,7 +6,7 @@ import Navbar from '../../components/navbar/index';
 const AdminPage: React.FC = () => (
   <>
     <Navbar />
-    <InfoContainer sx={{ mt: '137.5px' }}>
+    <InfoContainer>
       <UploadForm />
     </InfoContainer>
   </>

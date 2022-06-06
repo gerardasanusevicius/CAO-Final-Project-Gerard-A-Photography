@@ -6,7 +6,7 @@ const SocialLink = styled(Link)(({ theme }) => ({
   color: theme.palette.primary.dark,
   textDecoration: 'none',
   paddingLeft: '2rem',
-  transition: '0.5s',
+  transition: theme.transitions.create('color'),
 }));
 
 export default SocialLink;

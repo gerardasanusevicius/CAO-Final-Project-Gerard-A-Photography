@@ -5,3 +5,5 @@ export const pageBottom = '4rem';
 export const pageSide = '5rem';
 
 export const smallPicSize = '20em';
+
+export const baseFontSize = '0.825rem';

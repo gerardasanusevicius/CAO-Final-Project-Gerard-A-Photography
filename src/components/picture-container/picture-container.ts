@@ -5,7 +5,7 @@ const PictureContainer = styled(Box)({
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'flex-start',
-  gap: '3rem',
+  gap: '1.1rem',
 });
 
 export default PictureContainer;

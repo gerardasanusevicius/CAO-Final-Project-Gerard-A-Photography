@@ -2,16 +2,18 @@ import React from 'react';
 import { Typography, Button } from '@mui/material';
 import Background from './background';
 import SocialIcons from '../../components/social-icons';
+import { pageSide } from '../../helpers/structure-constants';
 
 const LandingPage: React.FC = () => (
   <Background>
+    <SocialIcons position="absolute" right={pageSide} top="1rem" color="primary.light" />
     <Typography
       component="h1"
       variant="h1"
       sx={(theme) => ({
         textTransform: 'uppercase',
         position: 'absolute',
-        right: '3rem',
+        right: pageSide,
         color: theme.palette.primary.dark,
       })}
 
@@ -29,11 +31,12 @@ const LandingPage: React.FC = () => (
         overflow: 'hidden',
         position: 'absolute',
         bottom: '10rem',
-        right: '3rem',
+        right: pageSide,
         fontSize: '1.5rem',
         border: `0.1rem solid ${theme.palette.primary.light}`,
         borderRadius: 0,
         transition: '0.5s',
+        m: 0,
         ':hover': {
           color: theme.palette.primary.dark,
           backgroundColor: theme.palette.primary.light,
@@ -43,7 +46,6 @@ const LandingPage: React.FC = () => (
       Explore
 
     </Button>
-    <SocialIcons position="absolute" right="2rem" top="1rem" color="primary.light" />
   </Background>
 );
 

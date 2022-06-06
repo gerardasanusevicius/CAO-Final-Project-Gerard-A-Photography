@@ -1,9 +1,10 @@
 import { styled, Button } from '@mui/material';
+import { baseFontSize } from '../../helpers/structure-constants';
 
 const ExternalLink = styled(Button)(({ theme }) => ({
   display: 'flex',
   color: theme.palette.primary.main,
-  fontSize: '1rem',
+  fontSize: baseFontSize,
   textTransform: 'uppercase',
   letterSpacing: '0.1rem',
   margin: '0 auto',

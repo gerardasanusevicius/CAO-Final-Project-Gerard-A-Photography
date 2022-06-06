@@ -1,5 +1,6 @@
 import { styled } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import { baseFontSize } from '../../helpers/structure-constants';
 
 const NavbarLink = styled(NavLink)(({ theme }) => ({
   display: 'flex',
@@ -8,7 +9,7 @@ const NavbarLink = styled(NavLink)(({ theme }) => ({
   textDecoration: 'none',
   alignSelf: 'stretch',
   paddingRight: '4rem',
-  fontSize: '1rem',
+  fontSize: baseFontSize,
   textTransform: 'uppercase',
   letterSpacing: '0.1rem',
   transition: theme.transitions.create('color'),
