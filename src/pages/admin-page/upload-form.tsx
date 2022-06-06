@@ -37,7 +37,7 @@ const UploadForm: React.FC = () => {
   return (
     <Container sx={{
       marginTop: '100px',
-      width: '250px',
+      width: '500px',
       display: 'flex',
       flexDirection: 'column',
 

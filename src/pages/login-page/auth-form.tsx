@@ -3,16 +3,17 @@ import {
   Alert,
   Box,
   Button,
-  Container,
   Paper,
   Typography,
   CircularProgress,
+  autocompleteClasses,
 } from '@mui/material';
 
 import { useRootDispatch } from '../../store/hooks';
 import { useRootSelector } from '../../store';
 import { selectLoggedIn, selectAuthError } from '../../store/selectors';
 import { authClearErrorAction } from '../../store/action-creators';
+import InfoContainer from '../../components/info-container';
 
 type AuthFormProps = {
   formTitle: string,
@@ -21,7 +22,7 @@ type AuthFormProps = {
   onSubmit?: React.FormEventHandler<HTMLFormElement>,
 };
 
-const contentWidth = 350;
+const authFormtWidth = '30rem';
 
 const AuthForm: React.FC<AuthFormProps> = ({
   formTitle,
@@ -39,15 +40,14 @@ const AuthForm: React.FC<AuthFormProps> = ({
   };
 
   return (
-    <Container sx={{ position: 'relative', pt: 10 }}>
+    <InfoContainer sx={{ display: 'flex', flexDirection: 'column' }}>
       {error && (
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Alert
             sx={{
-              position: 'absolute',
-              top: 0,
-              minWidth: contentWidth,
-              mt: 3,
+              minWidth: authFormtWidth,
+              m: '0 auto',
+              height: '3rem',
             }}
             color="error"
             onClose={clearError}
@@ -64,9 +64,9 @@ const AuthForm: React.FC<AuthFormProps> = ({
           mx: 'auto',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 1,
-          p: 3,
-          width: contentWidth,
+          gap: '0.5rem',
+          p: '1rem',
+          width: authFormtWidth,
           borderRadius: 0,
           bgcolor: 'primary.light',
         }}
@@ -81,9 +81,9 @@ const AuthForm: React.FC<AuthFormProps> = ({
         <Box sx={{
           display: 'flex',
           flexDirection: 'column',
-          gap: 2,
+          gap: '1rem',
           width: 1 / 1,
-          my: 2,
+          my: '1rem',
         }}
         >
           {children}
@@ -101,7 +101,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
           {loading ? <CircularProgress size={15} /> : submitText }
         </Button>
       </Paper>
-    </Container>
+    </InfoContainer>
   );
 };
 

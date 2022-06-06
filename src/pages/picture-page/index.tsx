@@ -34,13 +34,12 @@ const PicturePage: React.FC = () => {
   if (!pictureLoading && test) {
     const fetchedPicture = pictures.find((picture) => picture.id === id);
     pageContent = (
-      <PictureContainer>
-        <LargePicture>
-          <img
-            src={fetchedPicture?.srcLarge}
-            alt={fetchedPicture?.title}
-          />
-        </LargePicture>
+      <PictureContainer sx={{ height: '500px' }}>
+        <LargePicture
+          component="img"
+          src={fetchedPicture?.srcLarge}
+          alt={fetchedPicture?.title}
+        />
       </PictureContainer>
     );
   } else if (!pictureLoading) {

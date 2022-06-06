@@ -11,6 +11,7 @@ import { selectUser } from '../../store/selectors';
 import { useRootDispatch } from '../../store/hooks';
 import { authLogoutAction } from '../../store/action-creators';
 import CustomButton from '../custom-button/custom-button';
+import { pageSide } from '../../helpers/structure-constants';
 
 const Navbar: React.FC = () => {
   const adminLoggedIn = useRootSelector(selectUser);
@@ -27,22 +28,25 @@ const Navbar: React.FC = () => {
         bgcolor: 'primary.light',
         border: 0,
         boxShadow: 'none',
-        maxWidth: '100%',
+        px: pageSide,
       }}
     >
       <Toolbar
         sx={{
-          display: 'flex',
-          justifyContent: { xs: 'space-around', lg: 'space-between' },
-          mr: '-25px',
+          justifyContent: 'space-between',
+          px: '1rem',
+          m: 0,
         }}
+        disableGutters
       >
         <Container
           sx={{
             display: { md: 'flex' },
+            m: 0,
           }}
+          disableGutters
         >
-          <NavbarLink to="/portfolio">Portfolio</NavbarLink>
+          <NavbarLink to="/portfolio" sx={{ pl: 0 }}>Portfolio</NavbarLink>
           <NavbarLink to="/projects">Projects</NavbarLink>
           <NavbarLink to="/about">About</NavbarLink>
           <NavbarLink to="/contacts">Contact</NavbarLink>
@@ -51,12 +55,21 @@ const Navbar: React.FC = () => {
         </Container>
         { adminLoggedIn
           ? <CustomButton onClick={logout} btnLabel="Logout" /> : null}
-        <NavbarLink to="/">
+        <NavbarLink
+          to="/"
+          sx={{
+            p: 0,
+            m: 0,
+          }}
+        >
           <Box
             component="img"
             src="https://i.postimg.cc/ry4S1T1Z/gerard-a-logo.png"
             sx={{
-              width: '275px',
+              width: '20rem',
+              p: 0,
+              m: 0,
+              mr: '-3.5rem',
             }}
           />
 

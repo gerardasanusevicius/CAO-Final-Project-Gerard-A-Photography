@@ -1,5 +1,7 @@
-export const pageTop = '137.5px';
+export const pageTop = '10rem';
 
-export const pageBottom = '65px';
+export const pageBottom = '4rem';
 
-export const pageSide = '80px';
+export const pageSide = '5rem';
+
+export const smallPicSize = '20em';

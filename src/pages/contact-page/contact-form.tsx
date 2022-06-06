@@ -35,7 +35,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <Container sx={{
-      width: '500px',
+      width: '31.25rem',
       display: 'flex',
       flexDirection: 'column',
     }}
@@ -48,7 +48,7 @@ const ContactForm: React.FC = () => {
             name="email"
             type="email"
             sx={{
-              marginBottom: '20px',
+              marginBottom: '1.2rem',
               '& fieldset': {
                 borderRadius: 0,
               },
@@ -63,7 +63,7 @@ const ContactForm: React.FC = () => {
             name="title"
             type="text"
             sx={{
-              marginBottom: '20px',
+              marginBottom: '1.2rem',
               '& fieldset': {
                 borderRadius: 0,
               },
@@ -80,7 +80,7 @@ const ContactForm: React.FC = () => {
             multiline
             rows={2}
             sx={{
-              marginBottom: '20px',
+              marginBottom: '1.2rem',
               '& fieldset': {
                 borderRadius: 0,
               },

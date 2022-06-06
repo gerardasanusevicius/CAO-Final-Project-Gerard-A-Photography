@@ -1,8 +1,8 @@
 import { styled, Typography } from '@mui/material';
 
 const Paragraph = styled(Typography)(({ theme }) => ({
-  fontSize: '13.5px',
-  letterSpacing: '1.5px',
+  fontSize: '1rem',
+  letterSpacing: '0.1rem',
   color: theme.palette.primary.dark,
 }));
 

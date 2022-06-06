@@ -10,9 +10,9 @@ const AdminLayout: React.FC = () => (
     <Box
       component="main"
       sx={{
-        mt: pageTop,
-        ml: pageSide,
-        mr: pageSide,
+        pt: pageTop,
+        pl: pageSide,
+        pr: pageSide,
       }}
     >
       <Outlet />

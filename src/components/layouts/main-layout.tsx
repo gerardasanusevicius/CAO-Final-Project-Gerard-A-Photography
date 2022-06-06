@@ -11,10 +11,10 @@ const MainLayout: React.FC = () => (
     <Box
       component="main"
       sx={{
-        mt: pageTop,
-        mb: pageBottom,
-        ml: pageSide,
-        mr: pageSide,
+        pt: pageTop,
+        pb: pageBottom,
+        pl: pageSide,
+        pr: pageSide,
       }}
     >
       <Outlet />

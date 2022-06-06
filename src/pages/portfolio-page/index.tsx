@@ -12,7 +12,8 @@ import {
 import { portfolioFetchPicturesThunkAction } from '../../store/action-creators';
 import { selectUser } from '../../store/features/auth/auth-selectors';
 import SmallPicture from './small-picture';
-import SmallPictureExtra from './picture-box-extra';
+import SmallPictureExtra from './small-picture-extra';
+import { smallPicSize } from '../../helpers/structure-constants';
 
 const PortfolioPage: React.FC = () => {
   const pictures = useRootSelector(selectPortfolioPictures);
@@ -41,18 +42,29 @@ const PortfolioPage: React.FC = () => {
       <PictureContainer>
         {
     pictures.map(({ id, ...picture }) => (
-      <SmallPicture key={id} onClick={() => navigate(`/portfolio/${id}`)}>
-        <img
+      <Box
+        key={id}
+        onClick={() => navigate(`/portfolio/${id}`)}
+        sx={{
+          width: smallPicSize,
+          height: smallPicSize,
+          position: 'relative',
+          ':hover': {
+            cursor: 'pointer',
+            opacity: '0.9',
+          },
+        }}
+      >
+        <SmallPicture
+          component="img"
           src={picture.srcSmall}
           alt={picture.title}
-          width="300px"
-          height="300px"
         />
         {
           adminLoggedIn
             ? <SmallPictureExtra id={id} /> : null
   }
-      </SmallPicture>
+      </Box>
     ))
 }
       </PictureContainer>

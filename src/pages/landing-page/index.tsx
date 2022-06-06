@@ -11,7 +11,7 @@ const LandingPage: React.FC = () => (
       sx={(theme) => ({
         textTransform: 'uppercase',
         position: 'absolute',
-        right: '3vw',
+        right: '3rem',
         color: theme.palette.primary.dark,
       })}
 
@@ -28,11 +28,11 @@ const LandingPage: React.FC = () => (
         color: theme.palette.primary.light,
         overflow: 'hidden',
         position: 'absolute',
-        bottom: '7.5%',
-        right: '3.25vw',
+        bottom: '10rem',
+        right: '3rem',
         fontSize: '1.5rem',
-        border: `1.5px solid ${theme.palette.primary.light}`,
-        borderRadius: '0px',
+        border: `0.1rem solid ${theme.palette.primary.light}`,
+        borderRadius: 0,
         transition: '0.5s',
         ':hover': {
           color: theme.palette.primary.dark,
@@ -43,7 +43,7 @@ const LandingPage: React.FC = () => (
       Explore
 
     </Button>
-    <SocialIcons position="absolute" right="1.5vw" top="28px" color="primary.light" />
+    <SocialIcons position="absolute" right="2rem" top="1rem" color="primary.light" />
   </Background>
 );
 

@@ -12,7 +12,7 @@ const ContactPage: React.FC = () => (
     }}
     >
       <Divider sx={{
-        marginBottom: '15px', marginTop: '15px', borderBottomWidth: 2, borderRadius: '50%',
+        marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
       PHOTOGRAPHER & DIRECTOR GERARDAS ANUSEVICIUS
@@ -21,7 +21,7 @@ const ContactPage: React.FC = () => (
       <br />
       Email: gerard.a.official@gmail.com
       <Divider sx={{
-        marginBottom: '15px', marginTop: '15px', borderBottomWidth: 2, borderRadius: '50%',
+        marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
     </Paragraph>

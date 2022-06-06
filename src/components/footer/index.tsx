@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import Paragraph from '../paragraph';
 import SocialIcons from '../social-icons';
-import { pageBottom } from '../../helpers/structure-constants';
+import { pageBottom, pageSide } from '../../helpers/structure-constants';
 
 const Footer: React.FC = () => (
   <Box
@@ -18,11 +18,12 @@ const Footer: React.FC = () => (
       height: pageBottom,
       display: 'flex',
       alignItems: 'center',
-      padding: '0px 62.5px 0px 80px',
+      paddingLeft: pageSide,
+      paddingRight: pageSide,
       position: 'fixed',
-      left: '0px',
-      bottom: '0px',
-      right: '0px',
+      left: 0,
+      bottom: 0,
+      right: 0,
       ':hover .sociallink': {
         color: 'primary.main',
       },
@@ -32,6 +33,7 @@ const Footer: React.FC = () => (
       display: {
         xs: 'none', md: 'block',
       },
+      pl: '1rem',
     }}
     >
       Content of this webpage belongs to Gerardas Anusevicius.

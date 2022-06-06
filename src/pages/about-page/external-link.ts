@@ -3,9 +3,9 @@ import { styled, Button } from '@mui/material';
 const ExternalLink = styled(Button)(({ theme }) => ({
   display: 'flex',
   color: theme.palette.primary.main,
-  fontSize: '13.5px',
+  fontSize: '1rem',
   textTransform: 'uppercase',
-  letterSpacing: '1.5px',
+  letterSpacing: '0.1rem',
   margin: '0 auto',
 
   '&.active': {

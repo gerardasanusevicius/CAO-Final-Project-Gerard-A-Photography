@@ -6,22 +6,22 @@ import InfoContainer from '../../components/info-container';
 import ExternalLink from './external-link';
 
 const AboutPage: React.FC = () => (
-  <InfoContainer>
+  <InfoContainer sx={{ pl: '1rem' }}>
     <Paragraph sx={{
-      width: '36%',
-      m: 'auto 0px',
+      maxWidth: '40rem',
+      m: { xs: '0 auto', md: 0 },
     }}
     >
 
       <Divider sx={{
-        marginBottom: '15px', marginTop: '15px', borderBottomWidth: 2, borderRadius: '50%',
+        marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
 
       I am Gerardas Anusevicius - a photographer from Vilnius, Lithuania.
 
       <Divider sx={{
-        marginBottom: '15px', marginTop: '15px', borderBottomWidth: 2, borderRadius: '50%',
+        marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
 
@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => (
       backstage photography.
 
       <Divider sx={{
-        marginBottom: '15px', marginTop: '15px', borderBottomWidth: 2, borderRadius: '50%',
+        marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
 
@@ -51,7 +51,7 @@ const AboutPage: React.FC = () => (
       </a>
 
       <Divider sx={{
-        marginBottom: '15px', marginTop: '15px', borderBottomWidth: 2, borderRadius: '50%',
+        marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
       }}
       />
 
@@ -61,8 +61,10 @@ const AboutPage: React.FC = () => (
       src={AboutPicture}
       alt="gerard_about_pic"
       sx={{
-        width: '450px',
-        height: '450px',
+        maxWidth: '40rem',
+        height: 'auto',
+        m: { xs: '0 auto', md: 0 },
+        pr: '1rem',
       }}
     />
   </InfoContainer>

@@ -7,10 +7,10 @@ const NavbarLink = styled(NavLink)(({ theme }) => ({
   color: theme.palette.primary.main,
   textDecoration: 'none',
   alignSelf: 'stretch',
-  padding: theme.spacing(0, 4),
-  fontSize: '13.5px',
+  padding: '0 2rem',
+  fontSize: '1rem',
   textTransform: 'uppercase',
-  letterSpacing: '1.5px',
+  letterSpacing: '0.1rem',
   transition: theme.transitions.create('color'),
 
   '&.active': {
