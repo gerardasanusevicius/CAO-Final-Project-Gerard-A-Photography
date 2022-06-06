@@ -33,7 +33,6 @@ const Footer: React.FC = () => (
       display: {
         xs: 'none', md: 'block',
       },
-      pl: '1rem',
     }}
     >
       Content of this webpage belongs to Gerardas Anusevicius.

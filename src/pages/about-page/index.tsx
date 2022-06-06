@@ -6,7 +6,7 @@ import InfoContainer from '../../components/info-container';
 import ExternalLink from './external-link';
 
 const AboutPage: React.FC = () => (
-  <InfoContainer sx={{ pl: '1rem' }}>
+  <InfoContainer>
     <Paragraph sx={{
       maxWidth: '40rem',
       m: { xs: '0 auto', md: 0 },
@@ -64,7 +64,6 @@ const AboutPage: React.FC = () => (
         maxWidth: '40rem',
         height: 'auto',
         m: { xs: '0 auto', md: 0 },
-        pr: '1rem',
       }}
     />
   </InfoContainer>

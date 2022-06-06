@@ -7,7 +7,7 @@ const NavbarLink = styled(NavLink)(({ theme }) => ({
   color: theme.palette.primary.main,
   textDecoration: 'none',
   alignSelf: 'stretch',
-  padding: '0 2rem',
+  paddingRight: '4rem',
   fontSize: '1rem',
   textTransform: 'uppercase',
   letterSpacing: '0.1rem',

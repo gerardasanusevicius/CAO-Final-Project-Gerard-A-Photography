@@ -34,7 +34,6 @@ const Navbar: React.FC = () => {
       <Toolbar
         sx={{
           justifyContent: 'space-between',
-          px: '1rem',
           m: 0,
         }}
         disableGutters
@@ -46,7 +45,7 @@ const Navbar: React.FC = () => {
           }}
           disableGutters
         >
-          <NavbarLink to="/portfolio" sx={{ pl: 0 }}>Portfolio</NavbarLink>
+          <NavbarLink to="/portfolio">Portfolio</NavbarLink>
           <NavbarLink to="/projects">Projects</NavbarLink>
           <NavbarLink to="/about">About</NavbarLink>
           <NavbarLink to="/contacts">Contact</NavbarLink>

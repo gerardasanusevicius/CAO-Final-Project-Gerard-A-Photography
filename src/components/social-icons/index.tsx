@@ -26,6 +26,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
     sx={{
       display: 'flex',
       flexDirection: 'row',
+      mr: '-0.125rem',
       position,
       left,
       right,

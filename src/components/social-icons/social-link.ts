@@ -5,8 +5,7 @@ const SocialLink = styled(Link)(({ theme }) => ({
   alignItems: 'center',
   color: theme.palette.primary.dark,
   textDecoration: 'none',
-  alignSelf: 'stretch',
-  padding: '1rem',
+  paddingLeft: '2rem',
   transition: '0.5s',
 }));
 
