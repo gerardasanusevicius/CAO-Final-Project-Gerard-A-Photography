@@ -18,7 +18,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
     sx={{
       display: 'flex',
       flexDirection: 'row',
-      transform: 'translateX(0.125rem)',
+      transform: { md: 'translateX(0.125rem)' },
       zIndex: '5',
       margin,
     }}
