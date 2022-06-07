@@ -6,20 +6,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SocialLink from './social-link';
 
 type SocialIconsProps = {
-  position?: string,
-  left?: string | number,
-  right?: string | number,
-  top?: string | number,
-  bottom?: string | number,
+  margin?: string | number,
   color?: string,
 };
 
 const SocialIcons: React.FC<SocialIconsProps> = ({
-  position = 'static',
-  left = null,
-  right = null,
-  top = null,
-  bottom = null,
+  margin = 0,
   color,
 }) => (
   <Box
@@ -27,11 +19,8 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
       display: 'flex',
       flexDirection: 'row',
       transform: 'translateX(0.125rem)',
-      position,
-      left,
-      right,
-      top,
-      bottom,
+      zIndex: '5',
+      margin,
     }}
   >
     <SocialLink

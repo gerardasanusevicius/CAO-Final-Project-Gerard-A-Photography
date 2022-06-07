@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
             src="https://i.postimg.cc/ry4S1T1Z/gerard-a-logo.png"
             sx={{
               maxWidth: '20rem',
-              width: { xxs: '15rem', md: '100%', lg: '20rem' },
+              width: { xxs: '12.5rem', xs: '15rem', lg: '20rem' },
               height: 'auto',
               p: 0,
               m: 0,

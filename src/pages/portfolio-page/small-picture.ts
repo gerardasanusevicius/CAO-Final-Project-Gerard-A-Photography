@@ -9,6 +9,9 @@ type SmallPictureProps = {
 const SmallPicture = styled(Box)<SmallPictureProps>({
   width: smallPicSize,
   height: smallPicSize,
+  paddingRight: '0.5rem',
+  paddingLeft: '0.5rem',
+  paddingBottom: '1rem',
   position: 'relative',
   ':hover': {
     cursor: 'pointer',

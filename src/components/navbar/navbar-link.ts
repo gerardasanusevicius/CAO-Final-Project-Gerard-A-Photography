@@ -21,6 +21,12 @@ const NavbarLink = styled(NavLink)(({ theme }) => ({
   ':hover': {
     color: theme.palette.primary.dark,
   },
+  [theme.breakpoints.down('lg')]: {
+    paddingRight: '2rem',
+  },
+  [theme.breakpoints.down('ml')]: {
+    paddingRight: '1rem',
+  },
 }));
 
 export default NavbarLink;

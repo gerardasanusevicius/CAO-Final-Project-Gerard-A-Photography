@@ -4,7 +4,7 @@ import {
 } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
-import PictureContainer from '../../components/picture-container/picture-container';
+import PortfolioContainer from './portfolio-container';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import {
   selectPortfolioPictures, selectPortfolioPicturesLoading,
@@ -39,7 +39,7 @@ const PortfolioPage: React.FC = () => {
 
   if (!picturesLoading) {
     pageContent = (
-      <PictureContainer>
+      <PortfolioContainer>
         {
     pictures.map(({ id, ...picture }) => (
       <Box
@@ -67,7 +67,7 @@ const PortfolioPage: React.FC = () => {
       </Box>
     ))
 }
-      </PictureContainer>
+      </PortfolioContainer>
 
     );
   }

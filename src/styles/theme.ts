@@ -15,8 +15,8 @@ const lightTheme = createTheme({
   typography: {
     fontFamily: 'omnes-pro',
     h1: {
-      '@media (max-width:1400px)': {
-        fontSize: '4rem',
+      '@media (max-width:965px)': {
+        fontSize: '3rem',
       },
       fontSize: '5.5rem',
     },
@@ -54,7 +54,8 @@ const lightTheme = createTheme({
       xs: 400,
       sm: 600,
       md: 800,
-      lg: 1065,
+      ml: 1065,
+      lg: 1150,
       xl: 1536,
       xxl: 1920,
     },

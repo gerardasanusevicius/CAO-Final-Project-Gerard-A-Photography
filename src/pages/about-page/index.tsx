@@ -57,8 +57,8 @@ const AboutPage: React.FC = () => (
       src={AboutPicture}
       alt="gerard_about_pic"
       sx={{
-        maxWidth: { xs: '100%', lg: '36%' },
-        m: { xs: '0 auto', md: 0 },
+        maxWidth: { xxs: '100%', lg: '36%' },
+        m: { xxs: '0 auto', md: 0 },
       }}
     />
   </InfoContainer>
