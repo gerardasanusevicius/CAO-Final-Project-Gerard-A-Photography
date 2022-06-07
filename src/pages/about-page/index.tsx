@@ -8,8 +8,8 @@ import ExternalLink from './external-link';
 const AboutPage: React.FC = () => (
   <InfoContainer>
     <Box sx={{
-      width: { xs: '100%', lg: '36.25rem' },
-      m: { xs: '0 auto', md: 0 },
+      width: { xxs: '100%', lg: '36.25rem' },
+      m: { xxs: '0 auto', md: 0 },
     }}
     >
       <Divider sx={{

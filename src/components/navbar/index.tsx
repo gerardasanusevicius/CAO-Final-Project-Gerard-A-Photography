@@ -46,7 +46,6 @@ const Navbar: React.FC = () => {
           disableGutters
         >
           <NavbarLink to="/portfolio">Portfolio</NavbarLink>
-          <NavbarLink to="/projects">Projects</NavbarLink>
           <NavbarLink to="/about">About</NavbarLink>
           <NavbarLink to="/contacts">Contact</NavbarLink>
           { adminLoggedIn

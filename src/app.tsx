@@ -12,7 +12,6 @@ import AboutPage from './pages/about-page';
 import ContactPage from './pages/contact-page';
 import LandingPage from './pages/landing-page';
 import PortfolioPage from './pages/portfolio-page';
-import ProjectsPage from './pages/projects-page';
 import LoginPage from './pages/login-page';
 import AdminPage from './pages/admin-page/admin-page';
 
@@ -32,7 +31,6 @@ const App: React.FC = () => (
         <Route element={<MainLayout />}>
           <Route path="portfolio" element={<PortfolioPage />} />
           <Route path="portfolio/:id" element={<PicturePage />} />
-          <Route path="projects" element={<ProjectsPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contacts" element={<ContactPage />} />
         </Route>
