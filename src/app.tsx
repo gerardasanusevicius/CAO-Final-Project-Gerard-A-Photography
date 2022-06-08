@@ -13,7 +13,7 @@ import ContactPage from './pages/contact-page';
 import LandingPage from './pages/landing-page';
 import PortfolioPage from './pages/portfolio-page';
 import LoginPage from './pages/login-page';
-import AdminPage from './pages/admin-page/admin-page';
+import AdminPage from './pages/admin-page';
 
 import MainLayout from './components/layouts/main-layout';
 import RequireAuth from './routing/require-auth';

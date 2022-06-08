@@ -73,6 +73,18 @@
       "id": "Rcrp0TY"
     }
   ],
+  "projects": [
+    {
+      "title": "Average is the new black",
+      "url": "https://www.swomag.com/average-is-the-new-black/",
+      "id":"testtesttest1"
+    },
+    {
+      "title": "Shapes and Shadows",
+      "url": "https://www.swomag.com/shapes-and-shadows/",
+      "id": "testtesttest2"
+    }
+  ],
   "admin": [
     {
       "username": "gerardas.anusevicius",

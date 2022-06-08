@@ -7,15 +7,6 @@ const fetchPictures = async (): Promise<Picture[]> => {
   return data;
 };
 
-const fetchPictureById = async (id: string): Promise<Picture> => {
-  try {
-    const { data } = await ApiService.get<Picture>(`/pictures/${id}`);
-    return data;
-  } catch (error) {
-    throw new Error((error as AxiosError).message);
-  }
-};
-
 const deletePictureById = async (id: string): Promise<Picture> => {
   try {
     const { data } = await ApiService.delete<Picture>(`/pictures/${id}`);
@@ -25,10 +16,9 @@ const deletePictureById = async (id: string): Promise<Picture> => {
   }
 };
 
-const PortfolioService = {
+const AboutService = {
   fetchPictures,
-  fetchPictureById,
   deletePictureById,
 };
 
-export default PortfolioService;
+export default AboutService;
