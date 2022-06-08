@@ -8,6 +8,7 @@ import { selectAboutProjects, selectAboutProjectsLoading } from '../../store/sel
 import { aboutFetchProjectsThunkAction } from '../../store/features/about/about-action-creators';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import { selectUser } from '../../store/features/auth/auth-selectors';
+import ProjectExtra from './project-extra';
 
 const AboutPage: React.FC = () => {
   const projects = useRootSelector(selectAboutProjects);
@@ -70,9 +71,15 @@ const AboutPage: React.FC = () => {
           <Box>
             {
             projects.map(({ id, ...project }) => (
-              <a key={id} href={project.url} target="_blank" rel="noreferrer">
-                <ExternalLink>{project.title}</ExternalLink>
-              </a>
+              <Box>
+                <a key={id} href={project.url} target="_blank" rel="noreferrer">
+                  <ExternalLink>{project.title}</ExternalLink>
+                </a>
+                {
+          adminLoggedIn
+            ? <ProjectExtra id={id} /> : null
+                }
+              </Box>
             ))
           }
           </Box>
