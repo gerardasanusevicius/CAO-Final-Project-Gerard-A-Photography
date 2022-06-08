@@ -37,7 +37,7 @@ const PortfolioPage: React.FC = () => {
     </Box>
   );
 
-  if (pictures && !picturesLoading) {
+  if (!picturesLoading) {
     pageContent = (
       <PortfolioContainer>
         {

@@ -5,7 +5,7 @@ import AboutPicture from './gerard_about_picture.jpg';
 import InfoContainer from '../../components/info-container';
 import ExternalLink from './external-link';
 import { selectAboutProjects, selectAboutProjectsLoading } from '../../store/selectors';
-import { aboutFetchProjectsThunkAction } from '../../store/features/about/about-action-creators';
+import { aboutFetchProjectsThunkAction } from '../../store/action-creators';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import { selectUser } from '../../store/features/auth/auth-selectors';
 import ProjectExtra from './project-extra';
@@ -31,7 +31,7 @@ const AboutPage: React.FC = () => {
     </Box>
   );
 
-  if (projects && !projectsLoading) {
+  if (!projectsLoading) {
     pageContent = (
       <InfoContainer>
         <Box sx={{
@@ -71,8 +71,8 @@ const AboutPage: React.FC = () => {
           <Box>
             {
             projects.map(({ id, ...project }) => (
-              <Box>
-                <a key={id} href={project.url} target="_blank" rel="noreferrer">
+              <Box key={id}>
+                <a href={project.url} target="_blank" rel="noreferrer">
                   <ExternalLink>{project.title}</ExternalLink>
                 </a>
                 {
