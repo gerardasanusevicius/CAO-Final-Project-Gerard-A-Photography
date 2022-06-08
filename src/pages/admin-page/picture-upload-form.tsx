@@ -1,5 +1,5 @@
 import {
-  Box, Container, TextField,
+  Box, Container, TextField, Typography,
 } from '@mui/material';
 
 import axios from 'axios';
@@ -8,7 +8,7 @@ import CustomButton from '../../components/custom-button/custom-button';
 import { useRootDispatch } from '../../store/hooks';
 import { authLogoutAction } from '../../store/features/auth/auth-action-creators';
 
-const UploadForm: React.FC = () => {
+const PictureUploadForm: React.FC = () => {
   const [title, setTitle] = useState('');
   const [srcSmall, setSrcSmall] = useState('');
   const [srcLarge, setSrcLarge] = useState('');
@@ -44,13 +44,13 @@ const UploadForm: React.FC = () => {
 
   return (
     <Container sx={{
-      marginTop: '6.25rem',
       width: '31.25rem',
       display: 'flex',
       flexDirection: 'column',
 
     }}
     >
+      <Typography component="h4" variant="h4" sx={{ m: '0 auto 1.2rem auto' }}>Upload a new picture</Typography>
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
           <TextField
@@ -101,9 +101,8 @@ const UploadForm: React.FC = () => {
           <CustomButton btnLabel="Upload" type="submit" />
         </Box>
       </form>
-      <CustomButton sx={{ display: { xxs: 'block', lg: 'none' }, mt: '3rem' }} onClick={logout} btnLabel="Logout" />
     </Container>
   );
 };
 
-export default UploadForm;
+export default PictureUploadForm;
