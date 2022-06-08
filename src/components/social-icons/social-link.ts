@@ -5,9 +5,9 @@ const SocialLink = styled(Link)(({ theme }) => ({
   alignItems: 'center',
   color: theme.palette.primary.dark,
   textDecoration: 'none',
-  paddingLeft: '2rem',
+  marginLeft: '2rem',
   [theme.breakpoints.down('md')]: {
-    padding: '1rem',
+    margin: '1rem',
   },
   transition: theme.transitions.create('color'),
 }));

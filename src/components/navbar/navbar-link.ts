@@ -8,7 +8,7 @@ const NavbarLink = styled(NavLink)(({ theme }) => ({
   color: theme.palette.primary.main,
   textDecoration: 'none',
   alignSelf: 'stretch',
-  paddingRight: '4rem',
+  marginRight: '4rem',
   fontSize: baseFontSize,
   textTransform: 'uppercase',
   letterSpacing: '0.1rem',
@@ -22,10 +22,10 @@ const NavbarLink = styled(NavLink)(({ theme }) => ({
     color: theme.palette.primary.dark,
   },
   [theme.breakpoints.down('lg')]: {
-    paddingRight: '2rem',
+    marginRight: '2rem',
   },
   [theme.breakpoints.down('ml')]: {
-    paddingRight: '1rem',
+    marginRight: '1rem',
   },
 }));
 
