@@ -14,12 +14,6 @@ const lightTheme = createTheme({
   },
   typography: {
     fontFamily: 'omnes-pro',
-    h1: {
-      '@media (max-width:965px)': {
-        fontSize: '3rem',
-      },
-      fontSize: '5.5rem',
-    },
   },
   components: {
     MuiCssBaseline: {

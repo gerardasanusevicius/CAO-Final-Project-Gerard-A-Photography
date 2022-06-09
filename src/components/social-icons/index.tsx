@@ -1,17 +1,17 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, SxProps, Theme } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SocialLink from './social-link';
 
 type SocialIconsProps = {
-  margin?: string | number,
+  sx?: SxProps<Theme>,
   color?: string,
 };
 
 const SocialIcons: React.FC<SocialIconsProps> = ({
-  margin = 0,
+  sx,
   color,
 }) => (
   <Box
@@ -20,7 +20,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({
       flexDirection: 'row',
       transform: { md: 'translateX(0.125rem)' },
       zIndex: '5',
-      margin,
+      ...sx,
     }}
   >
     <SocialLink
