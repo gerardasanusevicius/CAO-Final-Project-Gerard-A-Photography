@@ -27,6 +27,9 @@ const NavbarLink = styled(NavLink)(({ theme }) => ({
   [theme.breakpoints.down('ml')]: {
     marginRight: '1rem',
   },
+  [theme.breakpoints.down('sm')]: {
+    marginRight: '0',
+  },
 }));
 
 export default NavbarLink;

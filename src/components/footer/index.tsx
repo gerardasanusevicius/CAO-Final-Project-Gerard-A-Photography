@@ -13,7 +13,7 @@ const Footer: React.FC = () => (
       maxWidth: '100%',
       flexDirection: 'row',
       justifyContent: {
-        xs: 'center', md: 'space-between',
+        xxs: 'center', md: 'space-between',
       },
       height: pageBottom,
       display: 'flex',

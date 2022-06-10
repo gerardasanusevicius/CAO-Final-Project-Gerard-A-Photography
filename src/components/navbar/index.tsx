@@ -68,7 +68,8 @@ const Navbar: React.FC = () => {
           to="/"
           sx={{
             p: 0,
-            m: 0,
+            m: { xxs: '0 1rem 0 0', lg: '0 2rem 0 0' },
+            transform: { xxs: 'translateX(2.5rem)', xs: 'translateX(3.5rem)' },
           }}
         >
           <Box
@@ -80,7 +81,6 @@ const Navbar: React.FC = () => {
               height: 'auto',
               p: 0,
               m: 0,
-              transform: 'translateX(3.5rem)',
             }}
           />
 
