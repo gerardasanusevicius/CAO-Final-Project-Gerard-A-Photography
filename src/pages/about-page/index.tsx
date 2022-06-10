@@ -4,20 +4,20 @@ import Paragraph from '../../components/paragraph';
 import AboutPicture from './gerard_about_picture.jpg';
 import InfoContainer from '../../components/info-container';
 import ExternalLink from './external-link';
-import { selectAboutProjects, selectAboutProjectsLoading } from '../../store/selectors';
-import { aboutFetchProjectsThunkAction } from '../../store/action-creators';
+import { selectProjects, selectProjectsLoading } from '../../store/selectors';
+import { fetchProjectsThunkAction } from '../../store/action-creators';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
 import { selectUser } from '../../store/features/auth/auth-selectors';
 import ProjectExtra from './project-extra';
 
 const AboutPage: React.FC = () => {
-  const projects = useRootSelector(selectAboutProjects);
-  const projectsLoading = useRootSelector(selectAboutProjectsLoading);
+  const projects = useRootSelector(selectProjects);
+  const projectsLoading = useRootSelector(selectProjectsLoading);
   const adminLoggedIn = useRootSelector(selectUser);
   const dispatch = useRootDispatch();
 
   useEffect(() => {
-    dispatch(aboutFetchProjectsThunkAction);
+    dispatch(fetchProjectsThunkAction);
   }, []);
 
   let pageContent = (

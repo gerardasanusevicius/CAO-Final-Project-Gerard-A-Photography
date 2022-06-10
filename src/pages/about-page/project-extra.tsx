@@ -4,7 +4,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { useRootDispatch } from '../../store/hooks';
-import { createAboutDeleteProjectThunkAction } from '../../store/action-creators';
+import { createDeleteProjectThunkAction } from '../../store/action-creators';
 
 type ProjectExtraProps = {
   id: string,
@@ -23,7 +23,7 @@ const ProjectExtra: React.FC<ProjectExtraProps> = ({ id }) => {
             color: 'primary.dark',
           },
         }}
-        onClick={(e) => { dispatch(createAboutDeleteProjectThunkAction(id)); }}
+        onClick={(e) => { dispatch(createDeleteProjectThunkAction(id)); }}
       >
         <ClearIcon />
       </Button>
