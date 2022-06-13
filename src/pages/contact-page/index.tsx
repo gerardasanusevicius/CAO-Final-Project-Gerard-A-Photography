@@ -22,6 +22,8 @@ const ContactPage: React.FC = () => (
         Phone: +37060214243
         <br />
         Email: gerard.a.official@gmail.com
+        <br />
+        Vilnius, Lithuania.
       </Paragraph>
       <Divider sx={{
         marginBottom: '1rem', marginTop: '1rem', borderBottomWidth: 2, borderRadius: '50%',
