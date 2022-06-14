@@ -9,6 +9,8 @@
 - Rename the .env.local-example file to .env.local
 - Define variables:
   - REACT_APP_API_SERVER - api server domain
+  - REACT_APP_AUTH_TOKEN_IN_LOCAL_STORAGE - secret auth token
+  - REACT_APP_API_SERVER_NEW - the new backend server
 
 ## Installation
 

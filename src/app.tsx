@@ -8,11 +8,14 @@ import {
 } from 'react-router-dom';
 import './app.css';
 
-import AboutPage from './pages/about-page';
-import ContactPage from './pages/contact-page';
+// all
 import LandingPage from './pages/landing-page';
 import PortfolioPage from './pages/portfolio-page';
+import AboutPage from './pages/about-page';
+import ContactPage from './pages/contact-page';
+// visitor
 import LoginPage from './pages/login-page';
+// admin
 import AdminPage from './pages/admin-page';
 
 import MainLayout from './components/layouts/main-layout';
