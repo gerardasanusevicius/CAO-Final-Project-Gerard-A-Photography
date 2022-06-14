@@ -7,14 +7,14 @@ import {
 } from '@mui/material';
 import NavbarLink from './navbar-link';
 import { useRootSelector } from '../../store';
-import { selectUser } from '../../store/selectors';
+import { selectAuthAdmin } from '../../store/selectors';
 import { useRootDispatch } from '../../store/hooks';
 import { authLogoutAction } from '../../store/action-creators';
 import CustomButton from '../custom-button/custom-button';
 import { pageSide } from '../../helpers/structure-constants';
 
 const Navbar: React.FC = () => {
-  const adminLoggedIn = useRootSelector(selectUser);
+  const adminLoggedIn = useRootSelector(selectAuthAdmin);
   const dispatch = useRootDispatch();
 
   const logout = () => {

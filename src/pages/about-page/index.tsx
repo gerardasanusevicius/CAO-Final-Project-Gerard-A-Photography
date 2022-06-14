@@ -7,13 +7,13 @@ import ExternalLink from './external-link';
 import { selectProjects, selectProjectsLoading } from '../../store/selectors';
 import { fetchProjectsThunkAction } from '../../store/action-creators';
 import { useRootSelector, useRootDispatch } from '../../store/hooks';
-import { selectUser } from '../../store/features/auth/auth-selectors';
+import { selectAuthAdmin } from '../../store/features/auth/auth-selectors';
 import ProjectExtra from './project-extra';
 
 const AboutPage: React.FC = () => {
   const projects = useRootSelector(selectProjects);
   const projectsLoading = useRootSelector(selectProjectsLoading);
-  const adminLoggedIn = useRootSelector(selectUser);
+  const adminLoggedIn = useRootSelector(selectAuthAdmin);
   const dispatch = useRootDispatch();
 
   useEffect(() => {

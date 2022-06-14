@@ -1,7 +1,8 @@
 import { Admin } from '../../../types';
 
 export type AuthState = {
-  user: Admin | null,
+  token: string | null,
+  admin: Admin | null,
   error: string | null,
   loading: boolean,
 };
@@ -17,7 +18,8 @@ export enum AuthActionType {
 export type AuthSuccessAction = {
   type: AuthActionType.AUTH_SUCCESS,
   payload: {
-    user: Admin,
+    admin: Admin,
+    token: string,
   }
 };
 

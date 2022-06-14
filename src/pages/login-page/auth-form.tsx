@@ -6,12 +6,11 @@ import {
   Paper,
   Typography,
   CircularProgress,
-  autocompleteClasses,
 } from '@mui/material';
 
 import { useRootDispatch } from '../../store/hooks';
 import { useRootSelector } from '../../store';
-import { selectLoggedIn, selectAuthError } from '../../store/selectors';
+import { selectAuthLoggedIn, selectAuthError } from '../../store/selectors';
 import { authClearErrorAction } from '../../store/action-creators';
 import InfoContainer from '../../components/info-container';
 
@@ -32,7 +31,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
   children,
 }) => {
   const dispatch = useRootDispatch();
-  const loading = useRootSelector(selectLoggedIn);
+  const loading = useRootSelector(selectAuthLoggedIn);
   const error = useRootSelector(selectAuthError);
 
   const clearError = () => {

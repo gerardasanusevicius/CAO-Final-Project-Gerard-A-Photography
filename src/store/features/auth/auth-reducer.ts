@@ -1,51 +1,61 @@
 /* eslint-disable @typescript-eslint/default-param-last */
 import { Reducer } from 'redux';
-import { AuthState, AuthAction } from './types';
+import { AuthState, AuthAction, AuthActionType } from './auth-types';
 
 import { getLocalStorageItem, setLocalStorageItem } from '../../../helpers/local-storage-helpers';
 
+const { REACT_APP_AUTH_TOKEN_IN_LOCAL_STORAGE } = process.env;
+
+if (REACT_APP_AUTH_TOKEN_IN_LOCAL_STORAGE === undefined) {
+  throw new Error('Please define variables in /.env.local');
+}
+
 const initialState: AuthState = {
-  user: getLocalStorageItem('user'),
+  token: getLocalStorageItem(REACT_APP_AUTH_TOKEN_IN_LOCAL_STORAGE),
+  admin: null,
   error: null,
   loading: false,
 };
 
 const authReducer: Reducer<AuthState, AuthAction> = (state = initialState, action) => {
   switch (action.type) {
-    case 'AUTH_SUCCESS': {
-      setLocalStorageItem('user', action.payload.user);
-      console.log('success');
+    case AuthActionType.AUTH_SUCCESS: {
+      setLocalStorageItem(REACT_APP_AUTH_TOKEN_IN_LOCAL_STORAGE, action.payload.admin);
       return {
         ...state,
-        user: action.payload.user,
+        admin: action.payload.admin,
+        token: action.payload.token,
         loading: false,
       };
     }
 
-    case 'AUTH_FAILURE': {
+    case AuthActionType.AUTH_FAILURE: {
       return {
         ...state,
         error: action.payload.error,
+        admin: null,
+        token: null,
         loading: false,
       };
     }
 
-    case 'AUTH_LOGOUT': {
-      localStorage.removeItem('user');
+    case AuthActionType.AUTH_LOGOUT: {
+      localStorage.removeItem('admin');
       return {
         ...state,
-        user: null,
+        admin: null,
+        token: null,
       };
     }
 
-    case 'AUTH_CLEAR_ERROR': {
+    case AuthActionType.AUTH_CLEAR_ERROR: {
       return {
         ...state,
         error: null,
       };
     }
 
-    case 'AUTH_LOADING': {
+    case AuthActionType.AUTH_LOADING: {
       return {
         ...state,
         error: null,

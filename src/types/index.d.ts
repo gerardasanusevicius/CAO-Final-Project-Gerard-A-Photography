@@ -4,4 +4,3 @@ export { default as About } from './about';
 export { default as Contacts } from './contacts';
 export { default as Admin } from './admin';
 export { default as Credentials } from './credentials';
-export { default as TemporaryAdmin } from './temporary-admin';

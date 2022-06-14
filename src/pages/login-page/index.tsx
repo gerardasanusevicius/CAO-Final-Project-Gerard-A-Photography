@@ -9,7 +9,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AuthForm from './auth-form';
 import { useRootSelector } from '../../store';
 import { selectAuthLoading } from '../../store/selectors';
-import { createLoginAction } from '../../store/action-creators';
+import { createLoginActionThunk } from '../../store/action-creators';
 import { useRootDispatch } from '../../store/hooks';
 
 type LoginValues = {
@@ -41,7 +41,7 @@ const LoginPage: React.FC = () => {
 
   const handleLogin: LoginFormikConfig['onSubmit'] = ({ username, password }) => {
     const redirect = searchParams.get('redirect') ?? '/admin';
-    const loginAction = createLoginAction({ username, password }, redirect);
+    const loginAction = createLoginActionThunk({ username, password }, redirect);
     dispatch(loginAction);
   };
 

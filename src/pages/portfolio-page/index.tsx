@@ -10,7 +10,7 @@ import {
   selectPortfolioPictures, selectPortfolioPicturesLoading,
 } from '../../store/selectors';
 import { portfolioFetchPicturesThunkAction } from '../../store/action-creators';
-import { selectUser } from '../../store/features/auth/auth-selectors';
+import { selectAuthAdmin } from '../../store/features/auth/auth-selectors';
 import SmallPicture from './small-picture';
 import SmallPictureExtra from './small-picture-extra';
 import { smallPicSize } from '../../helpers/structure-constants';
@@ -18,7 +18,7 @@ import { smallPicSize } from '../../helpers/structure-constants';
 const PortfolioPage: React.FC = () => {
   const pictures = useRootSelector(selectPortfolioPictures);
   const picturesLoading = useRootSelector(selectPortfolioPicturesLoading);
-  const adminLoggedIn = useRootSelector(selectUser);
+  const adminLoggedIn = useRootSelector(selectAuthAdmin);
   const dispatch = useRootDispatch();
   const navigate = useNavigate();
 

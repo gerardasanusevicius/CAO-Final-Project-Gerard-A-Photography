@@ -1,10 +1,10 @@
 import { ThunkDispatch } from 'redux-thunk';
 import { PortfolioAction, PortfolioState } from './features/portfolio/portfolio-types';
 import { ProjectsAction, ProjectsState } from './features/projects/projects-types';
-import { ContactsAction, ContactsState } from './features/projects/contacts-types';
-import { AboutAction, AboutState } from './features/projects/about-types';
-import { AuthAction, AuthState } from './features/auth/types';
-import { NavigationAction, NavigationState } from './features/navigation/types';
+import { ContactsAction, ContactsState } from './features/contacts/contacts-types';
+import { AboutAction, AboutState } from './features/about/about-types';
+import { AuthAction, AuthState } from './features/auth/auth-types';
+import { NavigationAction, NavigationState } from './features/navigation/navigation-types';
 
 export type RootState = {
   portfolio: PortfolioState,

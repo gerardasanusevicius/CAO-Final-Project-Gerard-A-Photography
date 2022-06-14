@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { Dispatch } from 'react';
-import AboutService from '../../../services/projects-api-service';
+import AboutService from '../../../services/about-api-service';
 import { About } from '../../../types';
 import { AppAction } from '../../redux-types';
 import {
