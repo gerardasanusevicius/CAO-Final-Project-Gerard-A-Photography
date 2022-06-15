@@ -16,9 +16,29 @@ const deletePictureById = async (id: string): Promise<Picture> => {
   }
 };
 
-const AboutService = {
+// const movePictureBack = async (id: string): Promise<Picture> => {
+//   try {
+//     const { data } = await ApiService.patch<Picture>(`/pictures/${id}`);
+//     return data;
+//   } catch (error) {
+//     throw new Error((error as AxiosError).message);
+//   }
+// };
+
+// const movePictureForward = async (id: string): Promise<Picture> => {
+//   try {
+//     const { data } = await ApiService.patch<Picture>(`/pictures/${id}`);
+//     return data;
+//   } catch (error) {
+//     throw new Error((error as AxiosError).message);
+//   }
+// };
+
+const PortfolioService = {
   fetchPictures,
   deletePictureById,
+  // movePictureBack,
+  // movePictureForward,
 };
 
-export default AboutService;
+export default PortfolioService;

@@ -9,6 +9,8 @@ import {
   PortfolioFetchPicturesLoadingAction,
   PortfolioFetchPicturesSuccessAction,
   PortfolioFetchPicturesFailureAction,
+  PortfolioMovePictureBackAction,
+  PortfolioMovePictureForwardAction,
 } from './portfolio-types';
 
 const portfolioFetchPicturesLoadingAction: PortfolioFetchPicturesLoadingAction = {
@@ -29,6 +31,16 @@ const createPortfolioDeletePictureAction = (id: string): PortfolioDeletePictureA
   type: PortfolioActionType.PORTFOLIO_DELETE_PICTURE,
   payload: { id },
 });
+
+// const createPortfolioMovePictureBackAction = (id: string): PortfolioMovePictureBackAction => ({
+//   type: PortfolioActionType.PORTFOLIO_MOVE_PICTURE_BACK,
+//   payload: { id },
+// });
+
+// const createPortfolioMovePictureForwardAction = (id: string): PortfolioMovePictureForwardAction => ({
+//   type: PortfolioActionType.PORTFOLIO_MOVE_PICTURE_FORWARD,
+//   payload: { id },
+// });
 
 export const portfolioFetchPicturesThunkAction = async (dispatch: Dispatch<AppAction>): Promise<void> => {
   dispatch(portfolioFetchPicturesLoadingAction);
@@ -53,3 +65,23 @@ export const createPortfolioDeletePictureThunkAction = (id: string) => async (di
     throw Error(errMsg);
   }
 };
+
+// export const createPortfolioMovePictureBackThunkAction = (id: string) => async (dispatch: Dispatch<AppAction>): Promise<void> => {
+//   try {
+//     await PortfolioService.movePictureBack(id);
+//     dispatch(createPortfolioMovePictureBackAction(id));
+//   } catch (error) {
+//     const errMsg = error instanceof Error ? error.message : String(error);
+//     throw Error(errMsg);
+//   }
+// };
+
+// export const createPortfolioMovePictureForwardThunkAction = (id: string) => async (dispatch: Dispatch<AppAction>): Promise<void> => {
+//   try {
+//     await PortfolioService.movePictureForward(id);
+//     dispatch(createPortfolioMovePictureForwardAction(id));
+//   } catch (error) {
+//     const errMsg = error instanceof Error ? error.message : String(error);
+//     throw Error(errMsg);
+//   }
+// };
