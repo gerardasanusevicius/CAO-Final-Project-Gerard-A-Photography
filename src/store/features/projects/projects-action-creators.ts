@@ -44,9 +44,9 @@ export const fetchProjectsThunkAction = async (dispatch: Dispatch<AppAction>): P
   }
 };
 
-export const createDeleteProjectThunkAction = (id: string) => async (dispatch: Dispatch<AppAction>): Promise<void> => {
+export const createDeleteProjectThunkAction = (id: string, token: string) => async (dispatch: Dispatch<AppAction>): Promise<void> => {
   try {
-    await ProjectsService.deleteProjectById(id);
+    await ProjectsService.deleteProjectById(id, token);
     dispatch(createDeleteProjectAction(id));
   } catch (error) {
     const errMsg = error instanceof Error ? error.message : String(error);

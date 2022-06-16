@@ -3,6 +3,7 @@ type Picture = {
   title: string,
   srcSmall: string,
   srcLarge: string,
+  updatedAt: string,
 };
 
 export default Picture;

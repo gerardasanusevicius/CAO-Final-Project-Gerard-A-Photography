@@ -1,12 +1,12 @@
+import React, { useState } from 'react';
 import {
   Box, Container, TextField, Typography,
 } from '@mui/material';
 
-import axios from 'axios';
-import React, { useState } from 'react';
 import CustomButton from '../../components/custom-button/custom-button';
-import { useRootDispatch } from '../../store/hooks';
-import { authLogoutAction } from '../../store/features/auth/auth-action-creators';
+import ApiService from '../../services/api-service';
+import { useRootSelector } from '../../store';
+import { selectAuthToken } from '../../store/selectors';
 
 const PictureUploadForm: React.FC = () => {
   const [title, setTitle] = useState('');
@@ -15,6 +15,7 @@ const PictureUploadForm: React.FC = () => {
   const [titleError, setTitleError] = useState(false);
   const [srcSmallError, setSrcSmallError] = useState(false);
   const [srcLargeError, setSrcLargeError] = useState(false);
+  const token = useRootSelector(selectAuthToken);
 
   const handleSubmit = (e : React.SyntheticEvent) => {
     e.preventDefault();
@@ -31,15 +32,13 @@ const PictureUploadForm: React.FC = () => {
     if (srcLarge === '') {
       setSrcLargeError(true);
     }
-    if (title && srcSmall && srcLarge) {
-      axios.post('http://localhost:8000/pictures', { title, srcSmall, srcLarge });
+    if (title && srcSmall && srcLarge && token) {
+      ApiService.post('/api/pictures', { title, srcSmall, srcLarge }, {
+        headers: {
+          Authorization: token,
+        },
+      });
     }
-  };
-
-  const dispatch = useRootDispatch();
-
-  const logout = () => {
-    dispatch(authLogoutAction);
   };
 
   return (

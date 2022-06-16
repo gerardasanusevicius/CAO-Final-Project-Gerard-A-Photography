@@ -1,18 +1,19 @@
+import React, { useState } from 'react';
 import {
   Box, Container, TextField, Typography,
 } from '@mui/material';
 
-import axios from 'axios';
-import React, { useState } from 'react';
 import CustomButton from '../../components/custom-button/custom-button';
-import { useRootDispatch } from '../../store/hooks';
-import { authLogoutAction } from '../../store/features/auth/auth-action-creators';
+import ApiService from '../../services/api-service';
+import { useRootSelector } from '../../store';
+import { selectAuthToken } from '../../store/selectors';
 
 const ProjectUploadForm: React.FC = () => {
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
   const [titleError, setTitleError] = useState(false);
   const [urlError, setUrlError] = useState(false);
+  const token = useRootSelector(selectAuthToken);
 
   const handleSubmit = (e : React.SyntheticEvent) => {
     e.preventDefault();
@@ -25,15 +26,13 @@ const ProjectUploadForm: React.FC = () => {
     if (url === '') {
       setUrlError(true);
     }
-    if (title && url) {
-      axios.post('http://localhost:8000/projects', { title, url });
+    if (title && url && token) {
+      ApiService.post('/api/projects', { title, url }, {
+        headers: {
+          Authorization: token,
+        },
+      });
     }
-  };
-
-  const dispatch = useRootDispatch();
-
-  const logout = () => {
-    dispatch(authLogoutAction);
   };
 
   return (

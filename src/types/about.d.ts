@@ -4,6 +4,7 @@ type About = {
   sentence: string,
   genres: string[],
   image: string,
+  updatedAt: string,
 };
 
 export default About;

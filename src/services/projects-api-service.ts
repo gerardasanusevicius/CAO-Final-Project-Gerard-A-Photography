@@ -1,15 +1,23 @@
 import { AxiosError } from 'axios';
 import { Project } from '../types';
-import ApiService from './api-service';
+import ApiService, { formatError } from './api-service';
 
 const fetchProjects = async (): Promise<Project[]> => {
-  const { data } = await ApiService.get<Project[]>('/projects');
-  return data;
+  try {
+    const { data } = await ApiService.get<Project[]>('/api/projects');
+    return data;
+  } catch (err) {
+    throw new Error(formatError(err));
+  }
 };
 
-const deleteProjectById = async (id: string): Promise<Project> => {
+const deleteProjectById = async (id: string, token: string): Promise<Project> => {
   try {
-    const { data } = await ApiService.delete<Project>(`/projects/${id}`);
+    const { data } = await ApiService.delete<Project>(`/api/projects/${id}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
     return data;
   } catch (error) {
     throw new Error((error as AxiosError).message);

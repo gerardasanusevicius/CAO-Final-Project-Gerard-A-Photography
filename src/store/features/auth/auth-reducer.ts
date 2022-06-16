@@ -20,7 +20,7 @@ const initialState: AuthState = {
 const authReducer: Reducer<AuthState, AuthAction> = (state = initialState, action) => {
   switch (action.type) {
     case AuthActionType.AUTH_SUCCESS: {
-      setLocalStorageItem(REACT_APP_AUTH_TOKEN_IN_LOCAL_STORAGE, action.payload.admin);
+      setLocalStorageItem(REACT_APP_AUTH_TOKEN_IN_LOCAL_STORAGE, action.payload.token);
       return {
         ...state,
         admin: action.payload.admin,

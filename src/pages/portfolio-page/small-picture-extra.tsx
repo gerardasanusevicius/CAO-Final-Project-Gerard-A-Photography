@@ -4,8 +4,9 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { createPortfolioDeletePictureThunkAction } from '../../store/action-creators';
-import { useRootDispatch } from '../../store/hooks';
+import { useRootDispatch, useRootSelector } from '../../store/hooks';
 import { smallPicSize } from '../../helpers/structure-constants';
+import { selectAuthToken } from '../../store/selectors';
 
 type SmallPictureExtraProps = {
   id: string,
@@ -13,6 +14,7 @@ type SmallPictureExtraProps = {
 
 const SmallPictureExtra: React.FC<SmallPictureExtraProps> = ({ id }) => {
   const dispatch = useRootDispatch();
+  const token = useRootSelector(selectAuthToken);
 
   return (
     <Box>
@@ -26,7 +28,7 @@ const SmallPictureExtra: React.FC<SmallPictureExtraProps> = ({ id }) => {
             color: 'primary.light',
           },
         }}
-        onClick={(e) => { e.stopPropagation(); dispatch(createPortfolioDeletePictureThunkAction(id)); }}
+        onClick={(e) => { e.stopPropagation(); dispatch(createPortfolioDeletePictureThunkAction(id, token as string)); }}
       >
         <ClearIcon />
       </Button>

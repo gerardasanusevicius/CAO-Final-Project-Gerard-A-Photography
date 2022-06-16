@@ -1,15 +1,23 @@
 import { AxiosError } from 'axios';
 import { Picture } from '../types';
-import ApiService from './api-service';
+import ApiService, { formatError } from './api-service';
 
 const fetchPictures = async (): Promise<Picture[]> => {
-  const { data } = await ApiService.get<Picture[]>('/pictures');
-  return data;
+  try {
+    const { data } = await ApiService.get<Picture[]>('/api/pictures');
+    return data;
+  } catch (err) {
+    throw new Error(formatError(err));
+  }
 };
 
-const deletePictureById = async (id: string): Promise<Picture> => {
+const deletePictureById = async (id: string, token: string): Promise<Picture> => {
   try {
-    const { data } = await ApiService.delete<Picture>(`/pictures/${id}`);
+    const { data } = await ApiService.delete<Picture>(`/api/pictures/${id}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
     return data;
   } catch (error) {
     throw new Error((error as AxiosError).message);
@@ -18,7 +26,7 @@ const deletePictureById = async (id: string): Promise<Picture> => {
 
 // const movePictureBack = async (id: string): Promise<Picture> => {
 //   try {
-//     const { data } = await ApiService.patch<Picture>(`/pictures/${id}`);
+//     const { data } = await ApiService.patch<Picture>(`/api/pictures/${id}`);
 //     return data;
 //   } catch (error) {
 //     throw new Error((error as AxiosError).message);
@@ -27,7 +35,7 @@ const deletePictureById = async (id: string): Promise<Picture> => {
 
 // const movePictureForward = async (id: string): Promise<Picture> => {
 //   try {
-//     const { data } = await ApiService.patch<Picture>(`/pictures/${id}`);
+//     const { data } = await ApiService.patch<Picture>(`/api/pictures/${id}`);
 //     return data;
 //   } catch (error) {
 //     throw new Error((error as AxiosError).message);

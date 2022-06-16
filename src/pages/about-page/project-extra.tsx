@@ -3,8 +3,9 @@ import React from 'react';
 import ClearIcon from '@mui/icons-material/Clear';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import { useRootDispatch } from '../../store/hooks';
+import { useRootDispatch, useRootSelector } from '../../store/hooks';
 import { createDeleteProjectThunkAction } from '../../store/action-creators';
+import { selectAuthToken } from '../../store/selectors';
 
 type ProjectExtraProps = {
   id: string,
@@ -12,6 +13,7 @@ type ProjectExtraProps = {
 
 const ProjectExtra: React.FC<ProjectExtraProps> = ({ id }) => {
   const dispatch = useRootDispatch();
+  const token = useRootSelector(selectAuthToken);
 
   return (
     <Box>
@@ -23,7 +25,7 @@ const ProjectExtra: React.FC<ProjectExtraProps> = ({ id }) => {
             color: 'primary.dark',
           },
         }}
-        onClick={(e) => { dispatch(createDeleteProjectThunkAction(id)); }}
+        onClick={() => { dispatch(createDeleteProjectThunkAction(id, token as string)); }}
       >
         <ClearIcon />
       </Button>
@@ -35,7 +37,7 @@ const ProjectExtra: React.FC<ProjectExtraProps> = ({ id }) => {
             color: 'primary.dark',
           },
         }}
-        onClick={(e) => { alert('feature coming soon'); }}
+        onClick={() => { alert('feature coming soon'); }}
       >
         <ArrowDropDownIcon />
       </Button>
@@ -48,7 +50,7 @@ const ProjectExtra: React.FC<ProjectExtraProps> = ({ id }) => {
             color: 'primary.dark',
           },
         }}
-        onClick={(e) => { alert('feature coming soon'); }}
+        onClick={() => { alert('feature coming soon'); }}
       >
         <ArrowDropUpIcon />
       </Button>

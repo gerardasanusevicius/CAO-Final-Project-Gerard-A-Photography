@@ -1,4 +1,4 @@
-import ApiService, { formatError } from './api-service-new';
+import ApiService, { formatError } from './api-service';
 import { Credentials, Admin } from '../types';
 
 export type AuthResponseBody = {
@@ -9,7 +9,6 @@ export type AuthResponseBody = {
 export const login = async (credentials: Credentials): Promise<AuthResponseBody> => {
   try {
     const response = await ApiService.post<AuthResponseBody>('/api/auth/login', credentials);
-
     return response.data;
   } catch (err) {
     throw new Error(formatError(err));

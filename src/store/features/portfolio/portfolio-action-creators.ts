@@ -9,8 +9,8 @@ import {
   PortfolioFetchPicturesLoadingAction,
   PortfolioFetchPicturesSuccessAction,
   PortfolioFetchPicturesFailureAction,
-  PortfolioMovePictureBackAction,
-  PortfolioMovePictureForwardAction,
+  // PortfolioMovePictureBackAction,
+  // PortfolioMovePictureForwardAction,
 } from './portfolio-types';
 
 const portfolioFetchPicturesLoadingAction: PortfolioFetchPicturesLoadingAction = {
@@ -46,7 +46,6 @@ export const portfolioFetchPicturesThunkAction = async (dispatch: Dispatch<AppAc
   dispatch(portfolioFetchPicturesLoadingAction);
   try {
     const portfolioPictures = await PortfolioService.fetchPictures();
-
     const portfolioFetchPicturesSuccessAction = createPortfolioFetchPicturesSuccessAction(portfolioPictures);
     dispatch(portfolioFetchPicturesSuccessAction);
   } catch (error) {
@@ -56,9 +55,9 @@ export const portfolioFetchPicturesThunkAction = async (dispatch: Dispatch<AppAc
   }
 };
 
-export const createPortfolioDeletePictureThunkAction = (id: string) => async (dispatch: Dispatch<AppAction>): Promise<void> => {
+export const createPortfolioDeletePictureThunkAction = (id: string, token: string) => async (dispatch: Dispatch<AppAction>): Promise<void> => {
   try {
-    await PortfolioService.deletePictureById(id);
+    await PortfolioService.deletePictureById(id, token);
     dispatch(createPortfolioDeletePictureAction(id));
   } catch (error) {
     const errMsg = error instanceof Error ? error.message : String(error);
