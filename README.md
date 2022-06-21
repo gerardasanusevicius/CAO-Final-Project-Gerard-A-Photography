@@ -1,4 +1,4 @@
-# DEMO Gerard A. Photography webpage
+# DEMO Gerard A. Photography page front-end
 
 ## System requirements
 
@@ -11,6 +11,7 @@
   - REACT_APP_API_SERVER - api server domain;
   - REACT_APP_AUTH_TOKEN_IN_LOCAL_STORAGE - secret auth token;
     Backend server repository:
+    https://github.com/gerardasanusevicius/code-academy-final-project-gerard-a-photography-back-end
 
 ## Installation
 
@@ -20,7 +21,6 @@
 
 - npm start - launches the development server
 - npm build - compiles the app
-- npm run server - launches the demo server
 
 ## Hidden pages
 
