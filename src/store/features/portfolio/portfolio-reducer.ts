@@ -41,17 +41,17 @@ const portfolioReducer: Reducer<PortfolioState, PortfolioAction> = (state = init
       };
     }
 
-    // case PortfolioActionType.PORTFOLIO_MOVE_PICTURE_BACK: {
+    // case PortfolioActionType.PORTFOLIO_SHIFT_PICTURE_LEFT: {
     //   return {
     //     ...state,
-    //     pictures: state.pictures.filter((picture) => picture.id === action.payload.id),
+    //     pictures:
     //   };
     // }
 
-    // case PortfolioActionType.PORTFOLIO_MOVE_PICTURE_FORWARD: {
+    // case PortfolioActionType.PORTFOLIO_SHIFT_PICTURE_RIGHT: {
     //   return {
     //     ...state,
-    //     pictures: state.pictures.filter((picture) => picture.id === action.payload.id),
+    //     pictures:
     //   };
     // }
 

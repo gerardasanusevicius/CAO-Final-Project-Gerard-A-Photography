@@ -24,29 +24,37 @@ const deletePictureById = async (id: string, token: string): Promise<Picture> =>
   }
 };
 
-// const movePictureBack = async (id: string): Promise<Picture> => {
-//   try {
-//     const { data } = await ApiService.patch<Picture>(`/api/pictures/${id}`);
-//     return data;
-//   } catch (error) {
-//     throw new Error((error as AxiosError).message);
-//   }
-// };
+const shiftPictureLeft = async (id: string, token: string): Promise<Picture> => {
+  try {
+    const { data } = await ApiService.patch<Picture>(`/api/pictures/${id}`, {}, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    return data;
+  } catch (error) {
+    throw new Error((error as AxiosError).message);
+  }
+};
 
-// const movePictureForward = async (id: string): Promise<Picture> => {
-//   try {
-//     const { data } = await ApiService.patch<Picture>(`/api/pictures/${id}`);
-//     return data;
-//   } catch (error) {
-//     throw new Error((error as AxiosError).message);
-//   }
-// };
+const shiftPictureRight = async (id: string, token: string): Promise<Picture> => {
+  try {
+    const { data } = await ApiService.patch<Picture>(`/api/pictures/${id}`, {}, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    return data;
+  } catch (error) {
+    throw new Error((error as AxiosError).message);
+  }
+};
 
 const PortfolioService = {
   fetchPictures,
   deletePictureById,
-  // movePictureBack,
-  // movePictureForward,
+  shiftPictureLeft,
+  shiftPictureRight,
 };
 
 export default PortfolioService;

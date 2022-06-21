@@ -26,7 +26,8 @@ module.exports = {
   ],
 
   rules: {
-    quotes: [2, 'single'],
+    'import/no-named-as-default': 0,
+    'quotes': [2, 'single'],
     'quote-props': [2, 'as-needed'],
     'linebreak-style': [2, 'unix'],
     'react/prop-types': [0],

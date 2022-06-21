@@ -8,8 +8,8 @@ export type PortfolioState = {
 
 export enum PortfolioActionType {
   PORTFOLIO_DELETE_PICTURE = 'PORTFOLIO_DELETE_PICTURE',
-  PORTFOLIO_MOVE_PICTURE_BACK = 'PORTFOLIO_MOVE_PICTURE_BACK',
-  PORTFOLIO_MOVE_PICTURE_FORWARD = 'PORTFOLIO_MOVE_PICTURE_FORWARD',
+  PORTFOLIO_SHIFT_PICTURE_LEFT = 'PORTFOLIO_SHIFT_PICTURE_LEFT',
+  PORTFOLIO_SHIFT_PICTURE_RIGHT = 'PORTFOLIO_SHIFT_PICTURE_RIGHT',
   PORTFOLIO_FETCH_PICTURES_LOADING = 'PORTFOLIO_FETCH_PICTURES_LOADING',
   PORTFOLIO_FETCH_PICTURES_SUCCESS = 'PORTFOLIO_FETCH_PICTURES_SUCCESS',
   PORTFOLIO_FETCH_PICTURES_FAILURE = 'PORTFOLIO_FETCH_PICTURES_FAILURE',
@@ -22,15 +22,15 @@ export type PortfolioDeletePictureAction = {
   },
 };
 
-export type PortfolioMovePictureBackAction = {
-  type: PortfolioActionType.PORTFOLIO_MOVE_PICTURE_BACK
+export type PortfolioShiftPictureLeftAction = {
+  type: PortfolioActionType.PORTFOLIO_SHIFT_PICTURE_LEFT
   payload: {
     id: string,
   },
 };
 
-export type PortfolioMovePictureForwardAction = {
-  type: PortfolioActionType.PORTFOLIO_MOVE_PICTURE_FORWARD
+export type PortfolioShiftPictureRightAction = {
+  type: PortfolioActionType.PORTFOLIO_SHIFT_PICTURE_RIGHT
   payload: {
     id: string,
   },
@@ -54,4 +54,4 @@ export type PortfolioFetchPicturesFailureAction = {
   }
 };
 
-export type PortfolioAction = PortfolioDeletePictureAction | PortfolioMovePictureBackAction | PortfolioMovePictureForwardAction | PortfolioFetchPicturesLoadingAction | PortfolioFetchPicturesSuccessAction | PortfolioFetchPicturesFailureAction;
+export type PortfolioAction = PortfolioDeletePictureAction | PortfolioShiftPictureLeftAction | PortfolioShiftPictureRightAction | PortfolioFetchPicturesLoadingAction | PortfolioFetchPicturesSuccessAction | PortfolioFetchPicturesFailureAction;

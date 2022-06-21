@@ -41,7 +41,7 @@ const PortfolioPage: React.FC = () => {
     pageContent = (
       <PortfolioContainer>
         {
-    pictures.map(({ id, ...picture }) => (
+    pictures.map(({ id, ...picture }, index) => (
       <Box
         key={id}
         onClick={() => navigate(`/portfolio/${id}`)}
@@ -62,7 +62,7 @@ const PortfolioPage: React.FC = () => {
         />
         {
           adminLoggedIn
-            ? <SmallPictureExtra id={id} /> : null
+            ? <SmallPictureExtra id={id} index={index} totalEl={pictures.length} /> : null
   }
       </Box>
     ))

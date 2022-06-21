@@ -40,7 +40,7 @@ const authReducer: Reducer<AuthState, AuthAction> = (state = initialState, actio
     }
 
     case AuthActionType.AUTH_LOGOUT: {
-      localStorage.removeItem('admin');
+      localStorage.removeItem('token');
       return {
         ...state,
         admin: null,
