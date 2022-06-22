@@ -69,7 +69,11 @@ const Navbar: React.FC = () => {
           sx={{
             p: 0,
             m: { xxs: '0 1rem 0 0', lg: '0 2rem 0 0' },
-            transform: { xxs: 'translateX(2.5rem)', xs: 'translateX(3.5rem)' },
+            transform: {
+              xxs: 'translateX(2.5rem)',
+              xs: 'translateX(3.5rem)',
+              lg: 'translateX(5.5rem)',
+            },
           }}
         >
           <Box
